@@ -1,7 +1,7 @@
 package fr.epsi.udev.ex10;
 
 import java.util.Scanner;
-// PEtit test 
+// PEtit test * 2 
 public class Camion {
 	private static int refMatricule=0;
 	{refMatricule++;}
