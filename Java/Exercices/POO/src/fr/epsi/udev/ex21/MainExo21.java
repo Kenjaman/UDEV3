@@ -10,19 +10,26 @@ public class MainExo21 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		InputStream monfichierS = null;
 		try {
 			Properties prop = new Properties();
-			InputStream monfichierS= new FileInputStream("K:/Code/UDEV3/Java/Exercices/POO/src/fr/epsi/udev/ex21/data.properties");
+			monfichierS= new FileInputStream("K:/Code/UDEV3/Java/Exercices/POO/src/fr/epsi/udev/ex21/data.properties");
 			prop.load(monfichierS);
 			System.out.println(prop.getProperty("fichier.input.personnes", null));
 			prop.list(System.out);
-			monfichierS.close();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}finally {
+			try {
+				monfichierS.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}
 
