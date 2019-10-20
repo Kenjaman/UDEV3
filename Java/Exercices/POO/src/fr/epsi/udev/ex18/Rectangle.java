@@ -6,8 +6,8 @@ public class Rectangle extends Forme {
 	private int largeur;
 	private int longueur;
 	
-	public Rectangle(int x, int y, int largeur, int longueur) {
-		super(x,y);
+	public Rectangle(int largeur, int longueur) {
+		super();
 		this.largeur= largeur;
 		this.longueur=longueur;
 	}

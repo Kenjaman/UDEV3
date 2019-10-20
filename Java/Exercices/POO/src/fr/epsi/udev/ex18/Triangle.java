@@ -6,8 +6,8 @@ public class Triangle extends Forme {
 	private int hauteur;
 	private int longueur;
 	
-	public Triangle(int x, int y, int hauteur, int longueur) {
-		super(x,y);
+	public Triangle(int hauteur, int longueur) {
+		super();
 		this.hauteur= hauteur;
 		this.longueur=longueur;
 	}
