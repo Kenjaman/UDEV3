@@ -1,7 +1,7 @@
 package fr.epsi.udev.ex10;
 
 import java.util.Scanner;
-
+// PEtit test 
 public class Camion {
 	private static int refMatricule=0;
 	{refMatricule++;}
@@ -18,11 +18,11 @@ public class Camion {
 	
 	public Camion() {
 		super();
-		System.out.println("Entrez le modèle :");
+		System.out.println("Entrez le modÃ¨le :");
 		this.modele=scn.nextLine();
 		System.out.println("Entrez la couleur :");
 		this.couleur=scn.nextLine();
-		System.out.println("Entrez le l'année :");
+		System.out.println("Entrez le l'annÃ©e :");
 		this.anneeMod=scn.nextInt();
 		System.out.println("Entrez le prix :");
 		this.prix=scn.nextInt();
@@ -44,19 +44,19 @@ public class Camion {
 		System.out.println("Couleur"+this.couleur);
 	}
 	public void demarreVehicule() {
-		System.out.println("Le camion démarre....");
+		System.out.println("Le camion dÃ©marre....");
 		this.demarrer=true;
 	}
 	public void arreterVehicule() {
 		this.demarrer=false;
-		System.out.println("Le camion s'arrète....");
+		System.out.println("Le camion s'arrÃ¨te....");
 	}
 	
 	public String afficher() {
-		return "Matricule :" +this.getMatricule()+ "\nModèle :"+this.getModele()+
-				"\nAnnée modèle: "+this.getAnneeMod()+
+		return "Matricule :" +this.getMatricule()+ "\nModÃ¨le :"+this.getModele()+
+				"\nAnnÃ©e modÃ¨le: "+this.getAnneeMod()+
 				"\nCouleur :"+this.couleur+
-				"\n Prix :"+this.getPrix()+" €";
+				"\n Prix :"+this.getPrix()+" â‚¬";
 	}
 
 	public int getMatricule() {
