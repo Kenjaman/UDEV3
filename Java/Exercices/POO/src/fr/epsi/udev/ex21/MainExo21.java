@@ -10,6 +10,7 @@ public class MainExo21 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		DeepCode est tu la ?
 		InputStream monfichierS = null;
 		try {
 			Properties prop = new Properties();
