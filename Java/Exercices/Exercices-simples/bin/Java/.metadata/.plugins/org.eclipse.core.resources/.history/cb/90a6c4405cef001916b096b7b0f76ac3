@@ -1,0 +1,54 @@
+package fr.epsi.udev.ex13;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import fr.epsi.udev.ex12.Livre;
+
+public class Bibliotheque {
+	private int id;
+	private String nom;
+	private List<Livre> listeLivre = new ArrayList<Livre>();
+	private String adresse;
+	private String ville;
+	
+	private static final int maxDeLivre=10;
+	
+	
+	
+	@Override
+	public String toString() {
+		return "Bibliotheque [id=" + id + ", nom=" + nom + ", listeLivre=" + listeLivre +" Max livre = "+Bibliotheque.maxDeLivre
+				+", adresse=" + adresse
+				+ ", ville=" + ville + "]";
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getNom() {
+		return nom;
+	}
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+	public List<Livre> getListeLivre() {
+		return listeLivre;
+	}
+	public void setListeLivre(List<Livre> listeLivre) {
+		this.listeLivre = listeLivre;
+	}
+	public String getAdresse() {
+		return adresse;
+	}
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
+	}
+	public String getVille() {
+		return ville;
+	}
+
+
+}

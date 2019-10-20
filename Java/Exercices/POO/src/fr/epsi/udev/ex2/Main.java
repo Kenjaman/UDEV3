@@ -1,0 +1,12 @@
+package fr.epsi.udev.ex2;
+
+//Log4j2 <----- api pour faire des sortie sur un log plutot que dans la console.
+public class Main {
+
+	public static void main(String[] args) {
+		
+
+	}
+	
+
+}

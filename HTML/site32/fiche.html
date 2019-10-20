@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Tableau</title>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="includes/styles/topNav.css">
+    <link rel="stylesheet" type="text/css" href="includes/styles/formulaire.css">
+</head>
+<body>
+<section id="topheader">
+    <header>
+        <div><img src="includes/images/logo.png" alt="logo"/></div>
+        <div><h1>Le titre qui va bien </h1></div>
+    </header>
+    <nav>
+        <div class="topnav">
+            <a href="index.html">Acceuil</a>
+            <a href="list.html">Liste</a>
+            <a href="fiche.html">Fiche</a>
+        </div>
+    </nav>
+</section>
+<section id="content">
+    <form method="post" action="" onsubmit="return verifForm()">
+        <header><h2>Fiche Série</h2></header>
+        <div>
+            <label>Titre :</label>
+            <input type="text" name="titre" id="titre_" value=""/>
+        </div>
+        <div>
+            <label>Nombre de saisons :</label>
+            <input type="number" id="nbsaison_" min="1" step="1" value="1" name="nbSaison"/>
+        </div>
+        <div>
+            <label>Date de première sortie  :</label>
+            <select name="cbJour"><option value="0">---</option></select>
+            <select name="cbMois"><option value="0">---</option></select>
+            <select name="cbAnnee"><option value="0">---</option></select>
+        </div>
+        <div>
+            <label>Réalisateur :</label>
+            <select name="realisateur"><option value="0">Inconnue</option></select>
+            <button type="button" onclick="ajoutReal()">+</button>
+        </div>
+        <div>
+            <label>Genre :</label>
+            <input type="checkbox" name="chkFantastique" id="chkFantastique" value="Fantastique"/><label for="chkFantastique">Fantastique</label>
+            <input type="checkbox" name="chkSyfy" value="Syfy" id="chkSyfy"/><label for="chkSyfy">Science Fiction</label>
+            <input type="checkbox" name="chkThriller" value="Thriller" id="chkThriller"/><label for="chkThriller">Thriller</label>
+            <input type="checkbox" name="chkPolicier" value="Policier" id="chkPolicier"/><label for="chkPolicier">Policier</label>
+        </div>
+        <div>
+            <label>Arrêtée :</label>
+            <input type="radio" name="rdStop" id="rdOui"/><labal for="rdOui">Oui</labal>
+            <input type="radio" name="rdStop" id="rdNon"/><labal for="rdNon">Non</labal>
+        </div>
+        <div id="actions">
+            <button type="submit">Valider</button>
+            <button type="reset">Annuler</button>
+        </div>
+    </form>
+</section>
+
+<script type="application/javascript">
+    let cbj = document.getElementsByName("cbJour")[0];
+    for(let i=1;i<=31;i++) {
+        cbj.options.add(new Option(i, i));
+    }
+    let cbm = document.getElementsByName("cbMois")[0];
+    tabMois= ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
+    for(let i=0;i<=11;i++) {
+        cbm.options.add(new Option(tabMois[i],i+1));
+    }
+    let cba = document.getElementsByName("cbAnnee")[0];
+    for(let i=2049;i>=1929;i--) {
+        cba.options.add(new Option(i,i));
+    }
+    function ajoutReal(){
+        let newReal=prompt("Nouveau réalisateur");
+        let maListe = document.getElementsByName("realisateur")[0];
+        let existe=false;
+        let i=0;
+        do {
+            existe=(newReal === maListe.options[i].text);
+            i++;
+        }while(!existe && i<maListe.options.length);
+        if(!existe)
+            maListe.options.add(new Option(newReal, maListe.options.length));
+        else
+            i--;
+        maListe.options[i].selected=true;
+    }
+
+    function verifForm(){
+        let formOk=false;
+        let champTitre = document.getElementById("titre_");
+        if(champTitre.value.trim()!=="")
+            formOk=true;
+        else {
+            alert("Saisissez un titre !");
+            champTitre.focus();
+            champTitre.style.backgroundColor = "red";
+            formOk=false;
+        }
+        let dateSelect=false;
+        let champJour = document.getElementsByName("cbJour")[0];
+        let champMois= document.getElementsByName("cbMois")[0];
+        let champAnnee=document.getElementsByName("cbAnnee")[0];
+        if(champJour.selectedIndex===0 || champMois.selectedIndex===0 || champAnnee.selectedIndex===0){
+            dateSelect=false;
+        }else
+            dateSelect=true;
+
+
+        let selectGenre=false;
+        let ckGenre=(document.getElementById("chkFantastique").checked || document.getElementById("chkSyfy").checked || document.getElementById("chkThriller").checked || document.getElementById("chkPolicier").checked);
+        if(!ckGenre)
+            return false;
+
+
+    }
+</script>
+</body>
+</html>
+

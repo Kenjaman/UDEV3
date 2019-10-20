@@ -1,0 +1,13 @@
+package fr.epsi.udev.ex10;
+
+public class Moto extends Voiture{
+
+	public Moto() {
+		super();
+	}
+
+	public Moto(String modele, int anneeMod, double prix, String couleur) {
+		super(modele,anneeMod, prix,couleur);	
+	}
+
+}

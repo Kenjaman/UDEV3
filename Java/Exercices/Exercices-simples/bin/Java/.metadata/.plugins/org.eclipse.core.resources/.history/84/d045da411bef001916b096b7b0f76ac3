@@ -1,0 +1,21 @@
+package fr.espi.udev.ex8;
+
+import java.util.Scanner;
+
+public class MainExo8 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scn = new Scanner(System.in);
+		System.out.println("Combien de valeur ?");
+		int n = scn.nextInt();
+		int []tab = new int[n];
+		for(int i=1; i<n;i++) {
+			if(i%2 !=0)
+				tab[i]=i*i;
+			System.out.println(i+" a pour carré "+tab[i]);
+				
+		}
+	}
+
+}

@@ -1,0 +1,43 @@
+
+public abstract class Forme {
+	private int x;
+	private int y;
+	private int couleur;
+	
+	public Forme(int x, int y, int couleur) {
+		this.x = x;
+		this.y = y;
+		this.couleur= couleur;
+	}
+	public void deplace(int x, int y) {
+		this.x=x;
+		this.y=y;
+	}
+	
+
+	
+	public int getX() {
+		return x;
+	}
+	public void setX(int x) {
+		this.x = x;
+	}
+	public int getY() {
+		return y;
+	}
+	public void setY(int y) {
+		this.y = y;
+	}
+	public int getCouleur() {
+		return couleur;
+	}
+	public void setCouleur(int couleur) {
+		this.couleur = couleur;
+	}
+	
+	public String toString() {
+		return String.format("x: %d, y: %d, couleur: %d", x, y ,couleur);
+	}
+	
+	public abstract double getSurface();
+}

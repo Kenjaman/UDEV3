@@ -1,0 +1,58 @@
+package fr.espi.udev.ex2;
+
+public class Etudiant {
+	private String nom;
+	private double[] notes = new double[4];
+	
+
+	public Etudiant() {
+		super();
+	}
+
+
+	public Etudiant(String nom, double[] notes, double moyenne, boolean resultat) {
+		super();
+		this.nom = nom;
+		this.notes = notes;
+	}
+	
+	public double calculMoyenne() {
+		double total=0;
+		for(double note:this.notes) {
+			total+=note;
+		}
+		return total/4;
+	}
+
+	
+
+	public String getNom() {
+		return nom;
+	}
+
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+
+	public double[] getNotes() {
+		return notes;
+	}
+
+
+	public void setNotes(double[] notes) {
+		this.notes = notes;
+	}
+
+
+	public String getResultat(boolean resultat) {
+		if(this.calculMoyenne()>=10)
+			return "admis";
+		else 
+			return "non-admis";
+	}
+
+
+	
+}

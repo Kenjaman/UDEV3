@@ -1,0 +1,26 @@
+
+public class Boulon extends Carre {
+	private Cercle cercle;
+	public Boulon(int x, int y, int couleur, int cote) {
+		super(x,y,couleur,cote);
+		this.cercle= new Cercle (x,y,couleur,cote/3);
+	}
+
+	@Override
+	public boolean contient(int xx, int yy) {
+		if(cercle.contient(xx, yy)) {
+			if(yy>=this.getY() && yy< this.getY()+this.getLongueur()) {
+				if(xx>=this.getX() && xx<this.getX()+this.getLargeur())
+					return true;
+			
+			}
+		}
+		return false;
+	}
+
+	@Override
+	public double getSurface() {
+		return super.getSurface()-cercle.getSurface();
+	}
+
+}

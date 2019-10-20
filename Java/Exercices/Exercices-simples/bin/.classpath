@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con"
+		path="org.eclipse.jdt.launching.JRE_CONTAINER" />
+	<classpathentry
+		excluding="Java/Exercices/POO/src/|UML/AtelierHeritage/src/|Java/Exercices/Exercices-simples/src/|UML/atelierUML/src/|Java/Exercices/POO/|UML/AteliersDiagclass/src/"
+		kind="src" path="" />
+	<classpathentry kind="src"
+		path="Java/Exercices/Exercices-simples/src" />
+	<classpathentry excluding="src/" kind="src"
+		path="Java/Exercices/POO" />
+	<classpathentry kind="src" path="Java/Exercices/POO/src" />
+	<classpathentry kind="src"
+		path="UML/AtelierHeritage/src" />
+	<classpathentry kind="src"
+		path="UML/AteliersDiagclass/src" />
+	<classpathentry kind="src" path="UML/atelierUML/src" />
+	<classpathentry kind="output"
+		path="Java/Exercices/Exercices-simples/bin" />
+</classpath>

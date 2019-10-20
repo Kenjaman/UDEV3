@@ -1,0 +1,59 @@
+package fr.epsi.udev.ex12;
+
+import java.util.Scanner;
+
+public class Livre {
+	private int id;
+	private String titre;
+	private String nomAuteur;
+	private double prix;
+	private static int idClasse;
+	{idClasse++;}
+	
+	Scanner scn = new Scanner(System.in);
+	
+	public Livre() {
+		this.id=idClasse;
+		System.out.println("Entrez l'auteur :");
+		this.nomAuteur=scn.nextLine();
+		System.out.println("Entrez le titre :");
+		this.titre=scn.nextLine();
+		System.out.println("Entrez le prix :");
+		this.prix=scn.nextInt();
+	}
+	
+	
+	
+	@Override
+	public String toString() {
+		return "Livre [id=" + id + ", titre=" + titre + ", nomAuteur=" + nomAuteur + ", prix=" + prix + "]";
+	}
+
+
+
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getTitre() {
+		return titre;
+	}
+	public void setTitre(String titre) {
+		this.titre = titre;
+	}
+	public String getNomAuteur() {
+		return nomAuteur;
+	}
+	public void setNomAuteur(String nomAuteur) {
+		this.nomAuteur = nomAuteur;
+	}
+	public double getPrix() {
+		return prix;
+	}
+	public void setPrix(double prix) {
+		this.prix = prix;
+	}
+	
+}

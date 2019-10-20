@@ -1,0 +1,10 @@
+
+public class Rectangle extends Forme {
+
+	@Override
+	public double getSurface() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

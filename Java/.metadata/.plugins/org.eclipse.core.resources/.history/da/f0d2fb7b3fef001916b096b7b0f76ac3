@@ -1,0 +1,18 @@
+package fr.epsi.udev.ex10;
+
+import fr.epsi.udev.exo9.Voiture;
+
+public class MainEx10 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Voiture voiture1 = new Voiture();
+		Voiture voiture2 = new Voiture();
+		Moto [] motos = new Moto[4];
+		for(Moto moto:motos) {
+			moto = new Moto();
+			System.out.println(moto.afficher());
+		}
+	}
+
+}

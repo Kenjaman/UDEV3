@@ -1,0 +1,26 @@
+fonction  VérifierTempsValide(E :h, min, sec : entiers) : Booléen
+Début
+	Si (h>=0 ET h<=23) alors
+		si ((m>=0 ET min<=59) alors
+			si (sec>=0 et sec<=59) alors
+				retourne VRAI
+			finsi
+		finsi
+	FinSi
+	retourne FAUX 
+Fin
+
+
+	
+procédure SaisirTemps(S: heure,minute,seconde : entiers) // Peux être écrite sous forme de fonction qui renverrais un booleen 	
+var heureValide : booleen
+Début
+	Répéter
+		Afficher ("Entrer une heure (hh,mm,ss)")
+		Saisir(heure,minute,seconde)
+		heureValide = VérifierTempsValide(heure,minute,seconde)
+		si non heureValide alors
+			Afficher("Temps incorrect. Recommencez")
+		finsi
+	Jusqu'a (heureValide)
+Fin

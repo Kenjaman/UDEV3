@@ -1,0 +1,10 @@
+package fr.epsi.udev.exo9;
+
+public class MainExo9 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

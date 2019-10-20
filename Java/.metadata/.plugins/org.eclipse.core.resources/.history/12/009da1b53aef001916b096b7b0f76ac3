@@ -1,0 +1,21 @@
+package fr.epsi.udev.ex10;
+
+public class Camion extends Voiture{
+
+	public Camion() {
+		super();
+	}
+
+	public Camion(String modele, int anneeMod, double prix, String couleur) {
+		super(modele,anneeMod, prix,couleur);
+	}
+
+	public void demarreVehicule() {
+		System.out.println("La camion démarre....");
+		this.demarrer=true;
+	}
+	public void arreterVehicule() {
+		this.demarrer=false;
+		System.out.println("La camion s'arrète....");
+	}
+}

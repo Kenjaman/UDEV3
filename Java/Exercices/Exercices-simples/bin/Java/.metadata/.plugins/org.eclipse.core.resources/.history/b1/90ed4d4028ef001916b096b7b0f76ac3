@@ -1,0 +1,13 @@
+package fr.epsi.udev.exo9;
+
+public class Voiture {
+	public Voiture() {
+		super();
+	}
+
+	public Voiture(String modele, int anneeMod, double prix, String couleur) {
+		super(modele,anneeMod, prix,couleur);
+	}
+	
+	
+}

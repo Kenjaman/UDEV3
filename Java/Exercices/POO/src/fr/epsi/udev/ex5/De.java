@@ -1,0 +1,23 @@
+package fr.epsi.udev.ex5;
+
+import java.util.Random;
+
+public class De {
+	private int value;
+	Random rdn = new Random();
+
+	public De() {
+		value=rdn.nextInt(6)+1;
+	}
+	public De(int NbFaces) {
+		value=rdn.nextInt(NbFaces)+1;
+		System.out.println(value);
+	}
+	public int getValue() {
+		return value;
+	}
+
+	public void setValue(int value) {
+		this.value = value;
+	}
+}

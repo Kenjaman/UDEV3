@@ -1,0 +1,13 @@
+
+public abstract class Forme {
+	private int x;
+	private int y;
+	private int couleur;
+	
+	public void deplace(int x, int y) {
+		this.x+=x;
+		this.y+=y;
+	}
+	
+	public abstract double getSurface();
+}
