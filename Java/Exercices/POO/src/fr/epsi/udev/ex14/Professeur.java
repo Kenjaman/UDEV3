@@ -1,6 +1,6 @@
 package fr.epsi.udev.ex14;
 
-public class Professeur extends Employe {
+public class Professeur extends Employe implements ProfesseurCollege, ProfesseurLycee{
 	private String matiere;
 
 	public Professeur() {
@@ -17,6 +17,7 @@ public class Professeur extends Employe {
 		etu.setNotes(note);
 		System.out.println(this.nom+" donne la note de "+note+" à l'élève "+etu.getNom());
 	}
+	
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -32,6 +33,17 @@ public class Professeur extends Employe {
 
 	public void setMatiere(String matiere) {
 		this.matiere = matiere;
+	}
+
+	@Override
+	public void donnerHeureDeColle() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void upDateSalaire() {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	
