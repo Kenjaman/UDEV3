@@ -1,7 +1,0 @@
-package fr.epsi.udev.ex15;
-
-
-public abstract class Forme {
-	public abstract double aire();
-}
-
