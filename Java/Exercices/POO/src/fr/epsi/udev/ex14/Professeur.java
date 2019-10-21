@@ -38,6 +38,8 @@ public class Professeur extends Employe implements ProfesseurCollege, Professeur
 	@Override
 	public void donnerHeureDeColle() {
 		// TODO Auto-generated method stub
+		int heuredeColle =0;
+		heuredeColle++;
 		
 	}
 	@Override
