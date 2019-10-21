@@ -2,7 +2,7 @@ package fr.epsi.udev.ex14;
 
 import java.util.Random;
 
-public class Personne {
+public abstract class Personne {
 	protected String nom;
 	protected String prenom;
 	protected String adresse;
