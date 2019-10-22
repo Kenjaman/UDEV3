@@ -16,7 +16,7 @@ public class Dice {
 	}
 
 	public void lancer() {
-		value = rdn.nextInt(this.nbFace)+1;
+		this.value = rdn.nextInt(this.nbFace)+1;
 	}
 
 	public int getValue() {
