@@ -1,0 +1,44 @@
+Dictionnaire de données 
+
+Nom : code_produit
+Code : CODE_PRODUIT
+Type : INT
+Taille : ,
+Commentaire : 
+
+Nom : des_produit
+Code : DES_PRODUIT
+Type : VARCHAR
+Taille : 100,
+Commentaire : 
+
+Nom : pu_produit
+Code : PU_PRODUIT
+Type : DECIMAL
+Taille : 7,2
+Commentaire : 
+
+Nom : prix_achat
+Code : PRIX_ACHAT
+Type : DECIMAL
+Taille : 7,2
+Commentaire : 
+
+Nom : num_fournisseur
+Code : NUM_FOURNISSEUR
+Type : INT
+Taille : ,
+Commentaire : 
+
+Nom : nom_fournisseur
+Code : NOM_FOURNISSEUR
+Type : VARCHAR
+Taille : 100,
+Commentaire : 
+
+Nom : ad_fournisseur
+Code : AD_FOURNISSEUR
+Type : VARCHAR
+Taille : 500,
+Commentaire : 
+
