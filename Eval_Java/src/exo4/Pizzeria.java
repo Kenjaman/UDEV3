@@ -1,5 +1,7 @@
 package exo4;
 
+import java.util.Scanner;
+
 public class Pizzeria {
 	private Pizza[] pizzas;
 	private Ingredient[] ingredients_dispo= new Ingredient[] {
@@ -53,9 +55,9 @@ public class Pizzeria {
 		for (int i = n; i >= 1; i--) {
 			for (int j = 1; j <= i; j++) {
 				if (inOrdreCrois[j - 1].getPrix() > inOrdreCrois[j].getPrix()) {
-					double temp = inOrdreCrois[j - 1].getPrix();
-					inOrdreCrois[j - 1].setPrix(inOrdreCrois[j].getPrix());
-					inOrdreCrois[j].setPrix(temp);
+					Ingredient temp = inOrdreCrois[j - 1];
+					inOrdreCrois[j - 1]=inOrdreCrois[j];
+					inOrdreCrois[j]=temp;
 				}
 			}
 		}
@@ -67,13 +69,50 @@ public class Pizzeria {
 		for (int i = n; i >= 1; i--) {
 			for (int j = 1; j <= i; j++) {
 				if (inOrdreCrois[j - 1].getNomIng().compareTo(inOrdreCrois[j].getNomIng())>0) {
-					String temp = inOrdreCrois[j - 1].getNomIng();
-					inOrdreCrois[j - 1].setNom_ing(inOrdreCrois[j].getNomIng());
-					inOrdreCrois[j].setNom_ing(temp);
+					Ingredient temp = inOrdreCrois[j - 1];
+					inOrdreCrois[j - 1]=inOrdreCrois[j];
+					inOrdreCrois[j] =temp;
 				}
 			}
 		}
 		return inOrdreCrois;
 	}
 	
+	public Ingredient getIngredientById(int id) {
+		Ingredient the_ingredient = null;
+		for(Ingredient ingredient : this.ingredients_dispo) {
+			if(ingredient.getId()==id)
+				the_ingredient=ingredient;
+		}
+		return the_ingredient;		
+	}
+	public void afficherListIngredient() {
+		for(Ingredient ing :this.getIngredients_dispo())
+			System.out.println(ing);
+	}
+	
+	public Pizza createPizza() {
+		Scanner scn = new Scanner(System.in);
+		int choix =0;
+		int i=0;
+		boolean ok =false;
+		Pizza pizzaCree=new Pizza();
+		System.out.println("Choisir au moins 3 ingredients dans la liste (6 maximum) : \n Entrez 99 pour terminer");
+		afficherListIngredient();
+		do {
+			System.out.println("Entrez l'id de l'ingredient n°"+i);
+			choix = scn.nextInt();
+			ok = pizzaCree.ajouteIngredient(this.getIngredientById(choix));
+			if(choix==99)
+				ok=false;
+			i++;
+		}while(i<3 && ok || i==6);
+		System.out.println("Entrez le nom de votre pizza :");
+		String nom_pizza = scn.nextLine();
+		pizzaCree.setNom(nom_pizza);
+		System.out.println("Vous avez créer la pizza "+pizzaCree);
+		return pizzaCree;
+		
+		
+	}
 }

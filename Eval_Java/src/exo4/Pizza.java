@@ -1,5 +1,7 @@
 package exo4;
 
+import java.util.Arrays;
+
 public class Pizza {
 	private int id_pizza;
 	private static int id=0;
@@ -13,6 +15,12 @@ public class Pizza {
 		this.id_pizza = id;
 		this.nom=nom;
 		this.ingredients=ingredients;
+	}
+
+
+	public Pizza() {
+		this.id_pizza=id;
+		// TODO Auto-generated constructor stub
 	}
 
 
@@ -56,9 +64,22 @@ public class Pizza {
 
 
 	public void setIngredients(Ingredient[] ingredients) {
-		if(ingredients.length>=3)
+		if(ingredients.length>=3 && ingredients.length<=6)
 			this.ingredients = ingredients;
 	}
 
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append(nom);
+		builder.append("\n Ingredients :");
+		builder.append(this.ingredients);
+		builder.append("Prix : ");
+		builder.append(prix_pizza);
+		return builder.toString();
+	}
+
+	
 
 }

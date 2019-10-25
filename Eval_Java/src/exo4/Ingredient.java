@@ -15,7 +15,7 @@ public class Ingredient {
 	}
 	
 	public int getId() {
-		return id;
+		return this.id_ing;
 	}
 
 	public double getPrix() {
@@ -31,14 +31,13 @@ public class Ingredient {
 	}
 
 	public void setPrix(double prix2) {
-		// TODO Auto-generated method stub
 		this.prix=prix2;
 	}
 
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append(id_ing);
+		builder.append(this.getId());
 		builder.append(" : ");
 		builder.append(nom_ing);
 		builder.append(" : ");
