@@ -9,6 +9,7 @@ public class Ingredient {
 	private String nom_ing;
 	
 	public Ingredient(String label, double prix) {
+		super();
 		this.id_ing=id;
 		this.prix=prix;
 		this.nom_ing=label;
@@ -37,8 +38,9 @@ public class Ingredient {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
+		builder.append("(");
 		builder.append(this.getId());
-		builder.append(" : ");
+		builder.append(") : ");
 		builder.append(nom_ing);
 		builder.append(" : ");
 		builder.append(prix);

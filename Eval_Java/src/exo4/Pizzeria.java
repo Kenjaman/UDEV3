@@ -1,54 +1,27 @@
 package exo4;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Pizzeria {
-	private Pizza[] pizzas;
-	private Ingredient[] ingredients_dispo= new Ingredient[] {
-			new Ingredient("Tomate", 2),
-			new Ingredient("Oeuf", 2),
-			new Ingredient("Pate", 0.5),
-			new Ingredient("Sauce tomate",0.2),
-			new Ingredient("Champignon", 1),
-			new Ingredient("Fromage de chèvre", 2),
-			new Ingredient("Poivron", 1),
-			new Ingredient("Mozzarella", 1),
-			new Ingredient("Emmental", 2),
-			new Ingredient("Roquefort", 3),
-			new Ingredient("Jambon", 1),
-			new Ingredient("Olive", 1.5),
-			new Ingredient("Lardons", 2),
-			new Ingredient("Oignons", 1),
-			new Ingredient("Reblochon", 3),
-			new Ingredient("Magret", 5)
-	};
+	private List <Pizza> pizzas = new ArrayList <Pizza>();
+	private Ingredient[] ingredients_dispo;
+	
+	//Cronstructeurs 
 	
 	public Pizzeria() {
 		super();
 	}
 
-	public Pizzeria(Pizza[] pizzas, Ingredient[] ingredients_dispo) {
+	public Pizzeria(List<Pizza> pizzas, Ingredient[] ingredients_dispo) {
 		super();
 		this.pizzas = pizzas;
 		this.ingredients_dispo = ingredients_dispo;
 	}
 
-	public Pizza[] getPizzas() {
-		return pizzas;
-	}
-
-	public Ingredient[] getIngredients_dispo() {
-		return ingredients_dispo;
-	}
-
-	public void setPizzas(Pizza[] pizzas) {
-		this.pizzas = pizzas;
-	}
-
-	public void setIngredients_dispo(Ingredient[] ingredients_dispo) {
-		this.ingredients_dispo = ingredients_dispo;
-	}
-
+//Liste des ingredients triées
+	
 	public Ingredient[] getListeIncredientPrixAsc() {
 		Ingredient[] inOrdreCrois= this.ingredients_dispo.clone();
 		int n = (inOrdreCrois.length) - 1;
@@ -63,6 +36,8 @@ public class Pizzeria {
 		}
 		return inOrdreCrois;
 	}
+	
+	
 	public Ingredient[] getListeIncredientNomAsc() {
 		Ingredient[] inOrdreCrois= this.ingredients_dispo.clone();
 		int n = (inOrdreCrois.length) - 1;
@@ -78,41 +53,90 @@ public class Pizzeria {
 		return inOrdreCrois;
 	}
 	
+	// Recupération d'un ingredient par son id
 	public Ingredient getIngredientById(int id) {
 		Ingredient the_ingredient = null;
 		for(Ingredient ingredient : this.ingredients_dispo) {
-			if(ingredient.getId()==id)
+			if(ingredient.getId()==id) {
 				the_ingredient=ingredient;
+			}
 		}
-		return the_ingredient;		
-	}
-	public void afficherListIngredient() {
-		for(Ingredient ing :this.getIngredients_dispo())
-			System.out.println(ing);
+		return the_ingredient;	
+			
 	}
 	
+	//Création d'une pizza
 	public Pizza createPizza() {
 		Scanner scn = new Scanner(System.in);
 		int choix =0;
-		int i=0;
-		boolean ok =false;
+		int i=1;
+		boolean ok;
 		Pizza pizzaCree=new Pizza();
-		System.out.println("Choisir au moins 3 ingredients dans la liste (6 maximum) : \n Entrez 99 pour terminer");
-		afficherListIngredient();
+		System.out.println("Choisir au moins 3 ingredients dans la liste (6 maximum) : \n Entrez 99 pour terminer et 0 pour afficher la liste des ingredients");
+//		afficherListIngredient();
 		do {
 			System.out.println("Entrez l'id de l'ingredient n°"+i);
 			choix = scn.nextInt();
-			ok = pizzaCree.ajouteIngredient(this.getIngredientById(choix));
-			if(choix==99)
+			if(choix>0 && choix <=this.getIngredients_dispo().length) {
+				ok = pizzaCree.ajouteIngredient(this.getIngredientById(choix));
+				i++;
+			}else if(choix ==0){
+				this.afficherListIngredient();
+				ok=true;
+			}else if(choix == 99 && i>=4)
 				ok=false;
-			i++;
-		}while(i<3 && ok || i==6);
+			else if(choix == 99 && i<4){ 
+				System.out.println("Erreur! Il manque des ingredients! Recommencez");
+				ok=true;
+			}else {
+				System.out.println("Erreur l'ingredient n'existe pas ! Recommencez");
+				ok=true;
+			}
+			 scn.nextLine();
+		}while(ok);
 		System.out.println("Entrez le nom de votre pizza :");
-		String nom_pizza = scn.nextLine();
+		String nom_pizza =scn.nextLine();
 		pizzaCree.setNom(nom_pizza);
-		System.out.println("Vous avez créer la pizza "+pizzaCree);
+		this.pizzas.add(pizzaCree);
 		return pizzaCree;
-		
-		
+	}
+	
+	//Getters and Setters 
+	public List<Pizza> getPizzas() {
+		return pizzas;
+	}
+	
+	public Ingredient[] getIngredients_dispo() {
+		return ingredients_dispo;
+	}
+	
+	public void setPizzas(List<Pizza> pizzas) {
+		this.pizzas = pizzas;
+	}
+	
+	public void setIngredients_dispo(Ingredient[] ingredients_dispo) {
+		this.ingredients_dispo = ingredients_dispo;
+	}
+
+	
+	//Affichages
+	public String afficherListIngredient() {
+		StringBuilder str = new StringBuilder();
+		for(Ingredient ing :this.getIngredients_dispo())
+			str.append(ing);
+		return str.toString();
+	}
+	
+	public String afficherListPizzas() {
+		StringBuilder str = new StringBuilder();
+		if(this.getPizzas().isEmpty())
+			str.append("Il n'y a pas de pizza...");
+		else {
+			for(Pizza pizz :this.getPizzas())
+				str.append(pizz);
+		}
+		return str.toString();
 	}
 }
+
+

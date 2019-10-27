@@ -1,55 +1,55 @@
 package exo4;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Pizza {
 	private int id_pizza;
 	private static int id=0;
 	{id++;}
 	private String nom;
-	private double prix_pizza;
-	private Ingredient[] ingredients = new Ingredient[6];
+	private List <Ingredient> ingredients = new ArrayList<Ingredient>();
 
 
-	public Pizza(String nom,Ingredient[] ingredients) {
+	public Pizza(String nom,List <Ingredient> ingredients) {
 		this.id_pizza = id;
 		this.nom=nom;
 		this.ingredients=ingredients;
 	}
 
-
 	public Pizza() {
 		this.id_pizza=id;
-		// TODO Auto-generated constructor stub
-	}
-
-
-	public String getNom() {
-		return nom;
+		this.nom="";
 	}
 
 	public boolean ajouteIngredient(Ingredient newIngredient) {
-		if(this.getIngredients().length<6) {
-			for(int i=0; i<this.getIngredients().length;i++) {
-				if(this.getIngredients()[i]==null) {
-					this.ingredients[i]=newIngredient;
-					return true;
-				}
-			}
+		if(this.getIngredients().size()<6) {
+			this.ingredients.add(newIngredient);
+			return true;
 		}
 		return false;
 	}
 
 
 	public double getPrix_pizza() {
-		for(Ingredient ingredient : ingredients)
-			this.prix_pizza += ingredient.getPrix()+3;
+		double prix_pizza=0;
+		for(Ingredient ingredient : this.ingredients)
+			prix_pizza += ingredient.getPrix()+3;
 		return prix_pizza;
 	}
 
 
-	public Ingredient[] getIngredients() {
+	public List<Ingredient> getIngredients() {
 		return ingredients;
+	}
+
+
+	public void setIngredients(List<Ingredient> ingredients) {
+		if(ingredients.size()>=3 && ingredients.size()<=6)
+			this.ingredients = ingredients;
+		else
+			System.out.println("Erreur la pizza contient trop ou pas asser d'ingredients :"+this.getIngredients().size()
+					+" actuellement");
 	}
 
 
@@ -57,29 +57,35 @@ public class Pizza {
 		this.nom = nom;
 	}
 
-
-	public void setPrix_pizza(double prix_pizza) {
-		this.prix_pizza = prix_pizza;
+	public String getNom() {
+		return nom;
 	}
 
-
-	public void setIngredients(Ingredient[] ingredients) {
-		if(ingredients.length>=3 && ingredients.length<=6)
-			this.ingredients = ingredients;
+	public int getId_pizza() {
+		return id_pizza;
 	}
 
 
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append(nom);
-		builder.append("\n Ingredients :");
-		builder.append(this.ingredients);
-		builder.append("Prix : ");
-		builder.append(prix_pizza);
+		builder.append("(");
+		builder.append(this.getId_pizza());
+		builder.append(") ");
+		builder.append(this.getNom());
+		builder.append("\nIngredients : \n");
+		for(Ingredient ingredient : this.getIngredients()) {
+			builder.append(ingredient.getNomIng());
+			builder.append(" (");
+			builder.append(ingredient.getPrix());
+			builder.append(" €) ");
+		}
+		builder.append("\nPrix : ");
+		builder.append(this.getPrix_pizza());
+		builder.append(" €");
 		return builder.toString();
 	}
 
-	
+
 
 }
