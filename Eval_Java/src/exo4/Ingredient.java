@@ -44,7 +44,7 @@ public class Ingredient {
 		builder.append(nom_ing);
 		builder.append(" : ");
 		builder.append(prix);
-		builder.append(" €");
+		builder.append(" €\n");
 		return builder.toString();
 	}
 	

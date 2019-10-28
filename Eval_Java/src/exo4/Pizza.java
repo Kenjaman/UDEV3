@@ -22,13 +22,13 @@ public class Pizza {
 		this.nom="";
 	}
 
-	public boolean ajouteIngredient(Ingredient newIngredient) {
-		if(this.getIngredients().size()<6) {
-			this.ingredients.add(newIngredient);
-			return true;
-		}
-		return false;
-	}
+//	public boolean ajouteIngredient(Ingredient newIngredient) {
+//		if(this.getIngredients().size()<6) {
+//			this.ingredients.add(newIngredient);
+//			return true;
+//		}
+//		return false;
+//	}
 
 
 	public double getPrix_pizza() {
@@ -73,16 +73,16 @@ public class Pizza {
 		builder.append(this.getId_pizza());
 		builder.append(") ");
 		builder.append(this.getNom());
-		builder.append("\nIngredients : \n");
+		builder.append("  : ");
+		builder.append(this.getPrix_pizza());
+		builder.append(" €");
+		builder.append("\nIngredients : \n\t");
 		for(Ingredient ingredient : this.getIngredients()) {
 			builder.append(ingredient.getNomIng());
 			builder.append(" (");
 			builder.append(ingredient.getPrix());
 			builder.append(" €) ");
 		}
-		builder.append("\nPrix : ");
-		builder.append(this.getPrix_pizza());
-		builder.append(" €");
 		return builder.toString();
 	}
 

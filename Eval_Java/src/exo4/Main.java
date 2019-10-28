@@ -6,7 +6,6 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Pizzeria maPizzeria=new Pizzeria();
 		Ingredient[] ingredients_dispo= new Ingredient[] {
 				new Ingredient("Tomate", 2),
@@ -27,9 +26,8 @@ public class Main {
 				new Ingredient("Magret", 5)
 		};
 		maPizzeria.setIngredients_dispo(ingredients_dispo);
-
-		Scanner scn = new Scanner(System.in);
-		int choixMenu = 99;
+		Scanner scnMenu = new Scanner(System.in);
+		int choixMenu=0;
 		System.out.println("Bienvienido en ma Pizzeria que puis-je faire pour vous aujourd'hui ?");
 		do {
 			System.out.println("\n=============== \t \t Menu : \t \t===============  \n"
@@ -37,9 +35,10 @@ public class Main {
 					+ "2) Afficher la liste des ingredients par nom \n"
 					+ "3) Creer sa pizza (6 ingredients maximum 3 minimum) \n"
 					+ "4) Afficher la liste des pizzas\n"
+					+ "5) Supprimer une pizza \n"
 					+ "0) Quitter l'application");
 			try {
-				choixMenu=scn.nextInt();
+				choixMenu=scnMenu.nextInt();
 
 				switch(choixMenu) {
 				case 1:
@@ -52,10 +51,25 @@ public class Main {
 						System.out.println(ing);
 					break;
 				case 3:
-					System.out.println("Vous avez créer la pizza : \n"+maPizzeria.createPizza());
+					Pizza laPizzaCree = maPizzeria.createPizza();
+					if(laPizzaCree != null)
+						System.out.println("Vous avez créer la pizza : \n"+laPizzaCree);
+					else
+						System.out.println("Vous avez quitté que puis je faire pour vous ?");
 					break;
 				case 4:
+					System.out.print(maPizzeria.afficherListPizzas());
+					break;
+				case 5:
 					System.out.println(maPizzeria.afficherListPizzas());
+					if(!maPizzeria.getPizzas().isEmpty()) {
+						System.out.println("Entrez l'id de la pizza que vous voulez supprimer :");
+						if(maPizzeria.supprimerPizza(scnMenu.nextInt())){
+							System.out.println("Pizza supprimée ");
+						}else {
+							System.out.println("Pizza pas supprimée :( elle doit pas existée :/ ");
+						}
+					}
 					break;
 				case 0:
 					System.out.println("Ciao !");
@@ -64,10 +78,11 @@ public class Main {
 					System.out.println("Hmmm c'est embarassant... Vous ne semblez pas savoir lire les choix possible ...");
 				}
 			}catch(InputMismatchException e) {
-				System.out.println("Votre doigt a riper ? Aller on la retente");
-				scn.nextLine();
+				System.err.println("Votre doigt a riper ? Aller on la retente");
+				scnMenu.nextLine();
 			}
 		}while(choixMenu!=0);
+		scnMenu.close();
 	}
 
 }
