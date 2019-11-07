@@ -9,8 +9,8 @@
 <body>
 <section id="topheader">
     <header>
-        <div><img src="includes/images/logo.png" alt="logo"/></div>
-        <div><h1>Le titre qui va bien </h1></div>
+        <div id="logo"><img src="includes/images/logo.svg" alt="logo"/></div>
+        <div><h1>Kenflix </h1></div>
     </header>
     <nav>
         <div class="topnav">
@@ -21,11 +21,11 @@
     </nav>
 </section>
 <section id="content">
-    <form method="post" action="" onsubmit="return verifForm()">
+    <form method="post" action="https://www.devatom.net/render.php" onsubmit="return verifForm();">
         <header><h2>Fiche Série</h2></header>
         <div>
             <label>Titre :</label>
-            <input type="text" name="titre" id="titre_" value=""/>
+            <input onchange="decolore(this);" type="text" name="titre" id="titre_" value=""/>
         </div>
         <div>
             <label>Nombre de saisons :</label>
@@ -33,26 +33,26 @@
         </div>
         <div>
             <label>Date de première sortie  :</label>
-            <select name="cbJour"><option value="0">---</option></select>
-            <select name="cbMois"><option value="0">---</option></select>
-            <select name="cbAnnee"><option value="0">---</option></select>
+            <select onchange="decolore(this);" name="cbJour"><option value="0">---</option></select>
+            <select onchange="decolore(this);" name="cbMois"><option value="0">---</option></select>
+            <select onchange="decolore(this);" name="cbAnnee"><option value="0">---</option></select>
         </div>
         <div>
             <label>Réalisateur :</label>
             <select name="realisateur"><option value="0">Inconnue</option></select>
             <button type="button" onclick="ajoutReal()">+</button>
         </div>
-        <div>
+        <div id="checkGenres">
             <label>Genre :</label>
-            <input type="checkbox" name="chkFantastique" id="chkFantastique" value="Fantastique"/><label for="chkFantastique">Fantastique</label>
-            <input type="checkbox" name="chkSyfy" value="Syfy" id="chkSyfy"/><label for="chkSyfy">Science Fiction</label>
-            <input type="checkbox" name="chkThriller" value="Thriller" id="chkThriller"/><label for="chkThriller">Thriller</label>
-            <input type="checkbox" name="chkPolicier" value="Policier" id="chkPolicier"/><label for="chkPolicier">Policier</label>
+            <input onchange="decoloreCheck(this);" type="checkbox" name="chkFantastique" id="chkFantastique"/><label for="chkFantastique">Fantastique</label>
+            <input onchange="decoloreCheck(this);" type="checkbox" name="chkSyfy" id="chkSyfy"/><label for="chkSyfy">Science Fiction</label>
+            <input onchange="decoloreCheck(this);" type="checkbox" name="chkThriller" id="chkThriller"/><label for="chkThriller">Thriller</label>
+            <input onchange="decoloreCheck(this);" type="checkbox" name="chkPolicier" id="chkPolicier"/><label for="chkPolicier">Policier</label>
         </div>
         <div>
             <label>Arrêtée :</label>
             <input type="radio" name="rdStop" id="rdOui"/><labal for="rdOui">Oui</labal>
-            <input type="radio" name="rdStop" id="rdNon"/><labal for="rdNon">Non</labal>
+            <input type="radio" name="rdStop" id="rdNon" checked/><labal for="rdNon">Non</labal>
         </div>
         <div id="actions">
             <button type="submit">Valider</button>
@@ -84,7 +84,7 @@
             existe=(newReal === maListe.options[i].text);
             i++;
         }while(!existe && i<maListe.options.length);
-        if(!existe)
+        if(!existe && newReal.trim()!=="")
             maListe.options.add(new Option(newReal, maListe.options.length));
         else
             i--;
@@ -92,33 +92,54 @@
     }
 
     function verifForm(){
-        let formOk=false;
+        let nbErr=0;
         let champTitre = document.getElementById("titre_");
-        if(champTitre.value.trim()!=="")
-            formOk=true;
-        else {
-            alert("Saisissez un titre !");
+        if(champTitre.value.trim()===""){
             champTitre.focus();
-            champTitre.style.backgroundColor = "red";
-            formOk=false;
+            colore(champTitre);
+            nbErr++;
         }
-        let dateSelect=false;
         let champJour = document.getElementsByName("cbJour")[0];
         let champMois= document.getElementsByName("cbMois")[0];
         let champAnnee=document.getElementsByName("cbAnnee")[0];
-        if(champJour.selectedIndex===0 || champMois.selectedIndex===0 || champAnnee.selectedIndex===0){
-            dateSelect=false;
-        }else
-            dateSelect=true;
+        if(champJour.selectedIndex===0 ){
+            colore(champJour);
+            champJour.focus();
+            nbErr++;
+        }
+        if(champMois.selectedIndex===0){
+            colore(champMois);
+            champMois.focus();
+            nbErr++;
+        }
+        if(champAnnee.selectedIndex===0){
+            colore(champAnnee);
+            champAnnee.focus();
+            nbErr++;
+        }
 
-
-        let selectGenre=false;
-        let ckGenre=(document.getElementById("chkFantastique").checked || document.getElementById("chkSyfy").checked || document.getElementById("chkThriller").checked || document.getElementById("chkPolicier").checked);
-        if(!ckGenre)
-            return false;
-
-
+        if(!oneChecked()){
+            let checkboxes = document.getElementById('checkGenres');
+            checkboxes.style.border='solid 1px red';
+            nbErr++;
+        }
+        return nbErr===0;
     }
+    function oneChecked(){
+        let checkboxes = document.querySelectorAll("#checkGenres input[type=checkbox]:checked");
+       return checkboxes.length!==0
+    }
+    function colore(input){
+        input.style.backgroundColor='red';
+    }
+    function decolore(input) {
+        input.style.backgroundColor = 'white';
+    }
+
+    function decoloreCheck(input){
+        input.parentNode.style.borderStyle='none';
+    }
+
 </script>
 </body>
 </html>

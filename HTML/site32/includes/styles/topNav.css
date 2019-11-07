@@ -4,16 +4,22 @@ body,html {
   padding: 0;
   font-size: 14px;
   font-family: Tahoma,Verdana, sans-serif;
+  background: #ffffff url("../images/FondKenan.jpg") no-repeat;
 }
 
-img{
-  border:none;
-  width: 10%;
-  height: 10%;
+#logo{
+  width: 100%;
+  margin-left: 42%;
+}
+#logo img{
+  width: 15vmax;
 }
 
 header h1{
 text-align: center;
+  color: darkred;
+  font-size: 10vmin;
+
 }
 
 
@@ -22,7 +28,7 @@ a, a:link, a:visited, a:hover{
 }
 
 nav .topnav {
-  background-color: #427a36;
+  background-color: #e50914;
 }
 
 /* Style the links inside the navigation bar */
