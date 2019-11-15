@@ -39,7 +39,9 @@
         </div>
         <div>
             <label>Réalisateur :</label>
-            <select name="realisateur"><option value="0">Inconnue</option></select>
+            <select name="realisateur">
+                <option value="0">Inconnue</option>
+            </select>
             <button type="button" onclick="ajoutReal()">+</button>
         </div>
         <div id="checkGenres">
@@ -75,6 +77,26 @@
     for(let i=2049;i>=1929;i--) {
         cba.options.add(new Option(i,i));
     }
+
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange=function(){
+        if(this.status==200 && this.readyState==4){
+            var text= this.responseText;
+            var lesReals = JSON.parse(text);
+            var cbReal=document.getElementsByName("realisateur")[0];
+            console.log(lesReals);
+            for(var i=0;i<lesReals.length;i++){
+                var id=lesReals[i].id;
+                var libelle=lesReals[i].nom+" "+lesReals[i].prenom;
+                cbReal.options.add(new Option(libelle,id));
+            }
+        }else {
+            console.log("je n'ai pas mon fichier"+this.responseText);
+        }
+    };
+    xmlHttp.open("GET","https://www.devatom.net/formation/UDEV3/APINetflix/api.php?data=personnes&idfonction=4");
+    xmlHttp.send();
+
     function ajoutReal(){
         let newReal=prompt("Nouveau réalisateur");
         let maListe = document.getElementsByName("realisateur")[0];
@@ -135,10 +157,11 @@
     function decolore(input) {
         input.style.backgroundColor = 'white';
     }
-
     function decoloreCheck(input){
         input.parentNode.style.borderStyle='none';
     }
+
+
 
 </script>
 </body>

@@ -7,7 +7,7 @@
 <body>
 <section id="topheader">
 	<header>
-		<div><img src="includes/images/logo.svg" alt="logo"/></div>
+		<div id="logo"><img src="includes/images/logo.svg" alt="logo"/></div>
 		<div><h1>Le titre qui va bien </h1></div>
 	</header>
 	<nav>
@@ -19,7 +19,26 @@
 	</nav>
 </section>
 <div id="content">
+	<table id="tableauSeries">
+		<thead>
+			<tr>Les séries</thead>
+	</table>
 </div>
-<footer><p>Site crée par Kénan Roux lors du premier cours de HTML/CSS du cursus UDEV'3</p></footer>
+<script type="application/javascript">
+	function loadXMLDoc() {
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				listerSeries(this);
+			}
+		};
+		xmlhttp.open("GET", "https://www.devatom.net/formation/UDEV3/APINetflix/api.php?data=series");
+		xmlhttp.send();
+	}
+	function listerSerie(json){
+
+	}
+</script>
 </body>
+<footer><p>Site crée par Kénan Roux lors du premier cours de HTML/CSS du cursus UDEV'3</p></footer>
 </html>
