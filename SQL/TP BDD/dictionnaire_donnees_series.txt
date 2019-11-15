@@ -1,0 +1,170 @@
+Dictionnaire de données 
+
+Nom : nom_personne
+Code : NOM_PERSONNE
+Type : VARCHAR
+Taille : 100,
+Commentaire : 
+
+Nom : prenom_personne
+Code : PRENOM
+Type : VARCHAR
+Taille : 100,
+Commentaire : 
+
+Nom : dateNaissance_personne
+Code : DATENAISSANCE_PERSONNE
+Type : DATE
+Taille : ,
+Commentaire : 
+
+Nom : nom_serie
+Code : NOM_SERIE
+Type : VARCHAR
+Taille : 100,
+Commentaire : 
+
+Nom : nom_original_serie
+Code : NOM_ORIGINAL_SERIE
+Type : VARCHAR
+Taille : 100,
+Commentaire : 
+
+Nom : annee_parution
+Code : ANNEE_PARUTION
+Type : DATE
+Taille : ,
+Commentaire : 
+
+Nom : synopsis_serie
+Code : SYNOPSIS_SERIE
+Type : LONGTEXT
+Taille : ,
+Commentaire : 
+
+Nom : index_saison
+Code : INDEX_SAISON
+Type : INT
+Taille : ,
+Commentaire : 
+
+Nom : synopsis_saison
+Code : SYNOPSIS_SAISON
+Type : LONGTEXT
+Taille : ,
+Commentaire : 
+
+Nom : annee_parution_saison
+Code : ANNEE_PARUTION_SAISON
+Type : INT
+Taille : 4,
+Commentaire : 
+
+Nom : index_episode
+Code : INDEX_EPISODE
+Type : INT
+Taille : ,
+Commentaire : 
+
+Nom : titre_original
+Code : TITRE_ORIGINAL
+Type : VARCHAR
+Taille : 100,
+Commentaire : 
+
+Nom : titre_france
+Code : TITRE_FRANCE
+Type : VARCHAR
+Taille : 100,
+Commentaire : 
+
+Nom : duree
+Code : DUREE
+Type : INT
+Taille : ,
+Commentaire : 
+
+Nom : annee_real_episode
+Code : ANNEE_REAL_EPISODE
+Type : INT
+Taille : 4,
+Commentaire : 
+
+Nom : synopsis_episode
+Code : SYNOPSIS_EPISODE
+Type : LONGTEXT
+Taille : ,
+Commentaire : 
+
+Nom : personnage
+Code : PERSONNAGE
+Type : VARCHAR
+Taille : 100,
+Commentaire : 
+
+Nom : nom_pays
+Code : NOM_PAYS
+Type : VARCHAR
+Taille : 50,
+Commentaire : 
+
+Nom : nom_genre
+Code : NOM_GENRE
+Type : VARCHAR
+Taille : 50,
+Commentaire : 
+
+Nom : libelle_fonction
+Code : LIBELLE_FONCTION
+Type : VARCHAR
+Taille : 50,
+Commentaire : 
+
+Nom : libelle_code_public
+Code : LIBELLE_CODE_PUBLIC
+Type : VARCHAR
+Taille : 50,
+Commentaire : 
+
+Nom : label_audio
+Code : LABEL_AUDIO
+Type : VARCHAR
+Taille : 50,
+Commentaire : 
+
+Nom : label_sub
+Code : LABEL_SUB
+Type : VARCHAR
+Taille : 50,
+Commentaire : 
+
+Nom : nom_plateforme
+Code : NOM_PLATEFORME
+Type : VARCHAR
+Taille : 50,
+Commentaire : 
+
+Nom : url_episode
+Code : URL_EPISODE
+Type : VARCHAR
+Taille : 200,
+Commentaire : 
+
+Nom : libelle_qualite
+Code : LIBELLE_QUALITE
+Type : VARCHAR
+Taille : 20,
+Commentaire : 
+
+Nom : nom_trailer
+Code : NOM_TRAILER
+Type : VARCHAR
+Taille : 100,
+Commentaire : 
+
+Nom : url_trailer
+Code : URL_TRAILER
+Type : VARCHAR
+Taille : 200,
+Commentaire : 
+

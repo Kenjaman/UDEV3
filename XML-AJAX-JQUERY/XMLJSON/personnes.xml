@@ -1,0 +1,19 @@
+<personne>
+	<personne id="1" nom="Sarrat" prenom="Manon">
+		<civilite id="2" libelle="Mademoiselle"/>
+	</personne>
+	
+	<personne id="2" nom="Loup" prenom="Annelle">
+		<civilite id="1" libelle="Madame"/>
+	</personne>
+	
+	<personne id="3" nom="Roux" prenom="Kénan">
+		<civilite id="3" libelle="Monsieur"/>
+	</personne>
+	
+	<personne id="4" nom="Rasowsky" prenom="Bob">
+		<civilite id="3" libelle="Monsieur"/>
+	</personne>
+</personne>
+
+

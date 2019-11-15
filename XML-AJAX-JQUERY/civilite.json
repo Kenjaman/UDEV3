@@ -1,0 +1,8 @@
+{
+	"civilites":
+		[
+			{"id":"1","libelle":"Madame"},
+			{"id":"2","libelle":"Mademoiselle"},
+			{"id":"3","libelle":"Monsieur"}
+		]
+}

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<civilites>
+	<civilite id="1" libelle="Madame"/>
+	<civilite id="2" libelle="Mademoiselle"/>
+	<civilite id="3" libelle="Monsieur"/>
+</civilites>

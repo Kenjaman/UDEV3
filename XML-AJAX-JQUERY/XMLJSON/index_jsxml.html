@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <select name="cbcivilite" id="cbcivilite">
+
+    </select>
+</body>
+<script type="text/javascript">
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange=function(){
+                if(this.status==200 && this.readyState==4){
+                       var text= this.responseText;
+                   //  var parser = new DOMParser();
+                   //  var xmlDoc = parser.parseFromString(text,"text/xml"); //fichier xml comme source
+                   //  var lesCivilites = xmlDoc.getElementsByTagName("civilite");
+                    var objCivilitesJSON = JSON.parse(text);
+                    var lesCivilites=objCivilitesJSON.civilites;
+                    var cbCiv=document.getElementsByName("cbcivilite")[0];
+                    console.log(lesCivilites);
+                    for(var i=0;i<lesCivilites.length;i++){
+                        var id=lesCivilites[i].id;//.getAttribute('id');
+                        var libelle=lesCivilites[i].libelle;//.getAttribute('libelle');
+                        cbCiv.options.add(new Option(libelle,id));
+                    }
+                }else {
+                    console.log("je n'ai pas mon fichier"+this.responseText);
+                }
+    };
+
+    // xmlHttp.open("GET","civilite.xml"); // pour fichier xml comme source
+    xmlHttp.open("GET","civilite.json");
+    xmlHttp.send();
+</script>
+</html>
