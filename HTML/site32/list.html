@@ -3,6 +3,7 @@
 <head>
 	<title>List</title>
 	<link rel="stylesheet" type="text/css" href="includes/styles/topNav.css">
+	<link rel="stylesheet" type="text/css" href="includes/styles/liste.css">
 </head>
 <body>
 <section id="topheader">
@@ -19,26 +20,21 @@
 	</nav>
 </section>
 <div id="content">
-	<table id="tableauSeries">
-		<thead>
-			<tr>Les séries</thead>
-	</table>
+	<div id="tableaux">
+		<table id=tableauSeries>
+		<caption>Les séries</caption>
+			<thead>
+				<tr>
+					<th>Nom</th>
+					<th>Année Parution</th>
+				</tr>
+			</thead>
+			<tbody id='bodyTableauSeries'>
+			</tbody>
+		</table>
+	</div>
 </div>
-<script type="application/javascript">
-	function loadXMLDoc() {
-		var xmlhttp = new XMLHttpRequest();
-		xmlhttp.onreadystatechange = function() {
-			if (this.readyState == 4 && this.status == 200) {
-				listerSeries(this);
-			}
-		};
-		xmlhttp.open("GET", "https://www.devatom.net/formation/UDEV3/APINetflix/api.php?data=series");
-		xmlhttp.send();
-	}
-	function listerSerie(json){
-
-	}
-</script>
+<script src="./includes/scripts/list.js"></script>
 </body>
-<footer><p>Site crée par Kénan Roux lors du premier cours de HTML/CSS du cursus UDEV'3</p></footer>
+<!-- <footer><p>Site crée par Kénan Roux lors du premier cours de HTML/CSS du cursus UDEV'3</p></footer> -->
 </html>
