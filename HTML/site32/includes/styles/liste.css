@@ -1,0 +1,17 @@
+table, th, td {
+	text-align:center;
+	background-color: rgba(255,255,255,0.2);
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+table{
+width:100%;
+}
+
+#tableaux{
+	width: 25vmax;
+    margin: auto;
+    background: darkred;
+    margin-top: 2vmin;
+}
