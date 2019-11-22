@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC
+          "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:fn="http://xmlns.jcp.org/jsp/jstl/functions">
+<h:head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</h:head>
+<h:body>
+	Bienvenue à toi, <h:outputText value="#{gp.personne.nom}"/> qui à <h:outputText value="#{gp.personne.age}"/> ans
+  <table>
+    <tbody>
+      <c:forEach var="entry" items="#{paramValues}">
+        <tr>
+          <td><h:outputText value="#{entry.key}"/></td>
+          <td><h:outputText value="#{fn:join(entry.value, ', ')}" /></td>
+        </tr>
+      </c:forEach>
+    </tbody>
+  </table>
+</h:body>
+</html>

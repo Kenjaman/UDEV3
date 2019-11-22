@@ -20,8 +20,16 @@
 </section>
 <div id="content">
 	<table id="tableauSeries">
+		<caption>Les séries</caption>
 		<thead>
-			<tr>Les séries</thead>
+			<tr>
+				<th>Nom de la série</th>
+				<th>Année de parution</th>
+			</tr>
+		</thead>
+		<tbody>
+
+		</tbody>
 	</table>
 </div>
 <script type="application/javascript">
@@ -29,13 +37,23 @@
 		var xmlhttp = new XMLHttpRequest();
 		xmlhttp.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
-				listerSeries(this);
+				listerSeries(this.responseText);
 			}
 		};
 		xmlhttp.open("GET", "https://www.devatom.net/formation/UDEV3/APINetflix/api.php?data=series");
 		xmlhttp.send();
 	}
 	function listerSerie(json){
+		var text=json;
+		var lesSeries = JSON.parse(text);
+		var tableau =document.getElementById('tableauSeries').getElementsByTagName('<tbody>')[0];
+		var tr = document.createElement('tr');
+		var td = document.createElement('td');
+		var nom=lesSeries[0];
+		for(var i = 0; i<=lesSeries.length;i++){
+			tableau.appendChild(tr);
+			tableau.a
+		}
 
 	}
 </script>
