@@ -27,11 +27,13 @@
 						<c:out value="${cocktail.nom}"/>
 					</option>
 				</c:forEach>
-			</select> 
+			</select>
+			<c:out value='${erreurs.erreurCocktail}' />
 		</div>
 		<div>
 			<label for="table">Numéro de table : </label>
-			<input id="table" name="table" type="text" value="<c:out value="${param['table']}" />"> 
+			<input id="table" name="table" type="text" value="<c:out value="${param['table']}" />">
+			<c:out value='${erreurs.erreurTable}' />
 		</div>
 		<div>
 			<button type="submit">Commander</button>
