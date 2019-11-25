@@ -10,8 +10,7 @@ public class Commande {
 	private int numeroTable;
 	private Date heureCommande;
 	private int id;
-	private static int idRef=0;
-	{idRef++;}
+	private static int idRef=1;
 	
 	public Commande(Cocktail cockComm, String numTable) throws DonneesInvalidesException{
 		super();
@@ -24,6 +23,7 @@ public class Commande {
 		this.heureCommande= new Date();
 		if(erreurs.isPresent())
 			throw new DonneesInvalidesException(erreurs);
+		idRef++;
 	}
 
 	private int convertirTable(String table, ErreurCommande erreurs) {

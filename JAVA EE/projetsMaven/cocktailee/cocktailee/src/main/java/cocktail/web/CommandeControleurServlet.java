@@ -1,6 +1,7 @@
 package cocktail.web;
 
 import java.io.IOException;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,6 +14,7 @@ import cocktail.modele.Cocktail;
 import cocktail.modele.CocktailService;
 import cocktail.modele.Commande;
 import cocktail.modele.DonneesInvalidesException;
+import cocktail.modele.TableauCommandes;
 
 @WebServlet(urlPatterns = "/commande", loadOnStartup = 0)
 public class CommandeControleurServlet extends HttpServlet {
@@ -27,23 +29,35 @@ public class CommandeControleurServlet extends HttpServlet {
 		getServletContext().setAttribute("cocktailService", cocktailService);
 		// on place la liste des cocktails en portée "application" pour que les vues puissent y accéder.
 		getServletContext().setAttribute("listeCocktails", cocktailService.getListeCocktails());
+		TableauCommandes listeCommande = new TableauCommandes();
+		getServletContext().setAttribute("listeCommandes", listeCommande);
+	
 	}
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		RequestDispatcher rd = getServletContext().getRequestDispatcher(VUE_COMMANDE);
+		
 		rd.forward(req, resp);
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		CocktailService cocktailService = getCocktailService();
+		TableauCommandes listeCommandes = (TableauCommandes) getServletContext().getAttribute("listeCommandes");
 		try {
 		Integer cockComm = Integer.valueOf(req.getParameter("cocktail"));
 		String numTable = req.getParameter("table");
 		Commande laCommande = new Commande(cocktailService.getCocktail(cockComm),numTable);
-		req.setAttribute("laCommande", laCommande);
-		getServletContext().getRequestDispatcher(VUE_RECAP_COMMANDE).forward(req, resp);
+		if(listeCommandes.ajoutCommande(laCommande)) {
+			req.setAttribute("laCommande", laCommande);
+			System.out.println(laCommande.getNumeroTable()+ " inserer");
+			getServletContext().setAttribute("listeCommandes", listeCommandes);
+			System.out.println(listeCommandes);
+			getServletContext().getRequestDispatcher(VUE_RECAP_COMMANDE).forward(req, resp);		
+		}
+		else
+			throw new DonneesInvalidesException("Quelque chose a mal tourné dans l'ajout de la commande...");
 		}catch(DonneesInvalidesException e ) {
 			req.setAttribute("erreurs", e.getErreurs());
 			req.setAttribute("cocktailService", cocktailService);

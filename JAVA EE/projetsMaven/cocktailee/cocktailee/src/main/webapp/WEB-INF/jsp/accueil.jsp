@@ -7,6 +7,7 @@
     <title>Cocktail EE</title>
   </head>
   <body>
-  	<a href="<c:url value="/commande"/>">Commander</a>  
+  	<a href="<c:url value="/commande"/>">Commander</a>  </br>
+  	<a href="<c:url value="/recapCommande"/>">Les commandes à traiter</a>  
   </body>
 </html>

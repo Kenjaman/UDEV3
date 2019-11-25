@@ -32,4 +32,18 @@ public class Cocktail {
 		return composition;
 	}
 
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Cocktail [id=");
+		builder.append(id);
+		builder.append(", nom=");
+		builder.append(nom);
+		builder.append(", composition=");
+		builder.append(composition);
+		builder.append("]");
+		return builder.toString();
+	}
+
+
 }
