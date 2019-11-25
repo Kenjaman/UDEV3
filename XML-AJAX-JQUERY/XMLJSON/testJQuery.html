@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test JQuery</title>
+
+</head>
+<body>
+<section id="topheader">
+    <header>
+        <div><p id="titre"> Un titre qui claque</p></div>
+    </header>
+    <section>
+        <p name="para">Ceci est un paragraphe</p>
+        <p name="para">Ceci est un paragraphe</p>
+    </section>
+</section>
+
+<script
+        src="http://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+
+<script
+        src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"
+        integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+        crossorigin="anonymous"></script>
+<script type="application/javascript">
+/*
+document.body.onload=function(){
+    var para = document.querySelectorAll("p[name=para]");
+    for(var i =0; i<para.length;i++){
+        para[i].onclick = function(){
+            this.style.color="red";
+        }
+    }
+}
+ */
+
+
+$(document).ready(function(){
+    $("p[name=para]").click(function () {
+        $(this).css("color","red");
+    })
+});
+</script>
+</body>
+</html>

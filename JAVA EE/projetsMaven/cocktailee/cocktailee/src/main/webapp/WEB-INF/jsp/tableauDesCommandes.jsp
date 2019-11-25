@@ -27,7 +27,10 @@
 			</c:forEach>
 			</tbody>
 		</table>
-		<form method="POST" action=""><input type="submit" value = "Commande suivante"/></form>
+		<a href="<c:url value="/execute"/>"><button>Commande suivante</button></a>
+		<a href="<c:url value="/"/>"><button>Commande suivante</button></a>
+		
+
 	</div>
 	
 

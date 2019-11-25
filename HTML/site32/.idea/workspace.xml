@@ -2,9 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="360cf600-bf45-499e-91f9-f4eb3da7ee3a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/includes/scripts/common_fct.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fiche.html" beforeDir="false" afterPath="$PROJECT_DIR$/fiche.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/scripts/fiche.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/scripts/fiche.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/scripts/list.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/scripts/list.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JAVA EE/Servers/Tomcat v9.0 Server at localhost-config/server.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../JAVA EE/Servers/Tomcat v9.0 Server at localhost-config/server.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../JAVA EE/projetsMaven/cocktailee/cocktailee/src/main/java/cocktail/web/CommandeControleurServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../JAVA EE/projetsMaven/cocktailee/cocktailee/src/main/java/cocktail/web/CommandeControleurServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../JAVA EE/projetsMaven/cocktailee/cocktailee/src/main/java/cocktail/web/ServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../JAVA EE/projetsMaven/cocktailee/cocktailee/src/main/java/cocktail/web/RecapController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../JAVA EE/projetsMaven/cocktailee/cocktailee/src/main/webapp/WEB-INF/jsp/executionCommande.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../JAVA EE/projetsMaven/cocktailee/cocktailee/src/main/webapp/WEB-INF/jsp/executionCommande.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../JAVA EE/projetsMaven/cocktailee/cocktailee/src/main/webapp/WEB-INF/jsp/tableauDesCommandes.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../JAVA EE/projetsMaven/cocktailee/cocktailee/src/main/webapp/WEB-INF/jsp/tableauDesCommandes.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,6 +23,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -28,7 +36,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../XML-AJAX-JQUERY/XMLJSON" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.stylelint" value="true" />
     <property name="node.js.path.for.package.stylelint" value="project" />
@@ -69,6 +77,7 @@
       <workItem from="1573834729572" duration="3006000" />
       <workItem from="1574252500758" duration="1570000" />
       <workItem from="1574254177701" duration="3853000" />
+      <workItem from="1574670700729" duration="16368000" />
     </task>
     <servers />
   </component>

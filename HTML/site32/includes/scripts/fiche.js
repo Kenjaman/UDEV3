@@ -1,35 +1,59 @@
-let cbj = document.getElementsByName("cbJour")[0];
-for(let i=1;i<=31;i++) {
-	cbj.options.add(new Option(i, i));
+function remplitCbJours(field) {
+	for (let i = 1; i <= 31; i++) {
+		field.options.add(new Option(i, i));
+	}
 }
-let cbm = document.getElementsByName("cbMois")[0];
-tabMois= ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
-for(let i=0;i<=11;i++) {
-	cbm.options.add(new Option(tabMois[i],i+1));
+function remplitCbMois(field) {
+	tabMois = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
+	for (let i = 0; i <= 11; i++) {
+		field.options.add(new Option(tabMois[i], i + 1));
+	}
 }
-let cba = document.getElementsByName("cbAnnee")[0];
-for(let i=2049;i>=1929;i--) {
-	cba.options.add(new Option(i,i));
+function remplitCbAnnee(field) {
+	for (let i = 2049; i >= 1929; i--) {
+		field.options.add(new Option(i, i));
+	}
 }
 
-var xmlHttp = new XMLHttpRequest();
-xmlHttp.onreadystatechange=function(){
-	if(this.status==200 && this.readyState==4){
-		var text= this.responseText;
-		var lesReals = JSON.parse(text);
-		var cbReal=document.getElementsByName("realisateur")[0];
-		console.log(lesReals);
-		for(var i=0;i<lesReals.length;i++){
-			var id=lesReals[i].id;
-			var libelle=lesReals[i].nom+" "+lesReals[i].prenom;
-			cbReal.options.add(new Option(libelle,id));
+function remplitCbReal(field) {
+	var xmlHttp = getAjaxRequestObject();
+	xmlHttp.onreadystatechange=function(){
+		if(this.status==200 && this.readyState==4){
+			var lesReals = JSON.parse(this.responseText);
+			console.log(lesReals);
+			lesReals.sort(function(a,b){
+				if(a.nom+' '+a.prenom < b.nom+' '+b.prenom){
+					return -1;
+				}else if(a.nom+' '+a.prenom > b.nom+' '+b.prenom){
+					return 1;
+				}else
+					return 0;
+			});
+			for (var i = 0; i < lesReals.length; i++) {
+				var id = lesReals[i].id;
+				var libelle = lesReals[i].nom + " " + lesReals[i].prenom;
+				field.options.add(new Option(libelle, id));
+			}
+		}else {
+			console.log("je n'ai pas mon fichier"+this.responseText);
 		}
-	}else {
-		console.log("je n'ai pas mon fichier"+this.responseText);
-	}
+	};
+	xmlHttp.open("GET","https://www.devatom.net/formation/UDEV3/APINetflix/api.php?data=personnes&idfonction=4");
+	xmlHttp.send();
+
 };
-xmlHttp.open("GET","https://www.devatom.net/formation/UDEV3/APINetflix/api.php?data=personnes&idfonction=4");
-xmlHttp.send();
+
+document.body.onload =function(){
+	//let cbj = document.getElementsByName("cbJour")[0];*
+	let cbj = document.querySelectorAll("select[name=cbJour]")[0];
+	let cbm = document.querySelectorAll("select[name=cbMois]")[0];
+	let cba = document.querySelectorAll("select[name=cbAnnee]")[0];
+	var cbReal=document.querySelectorAll("select[name=realisateur]")[0];
+	remplitCbJours(cbj);
+	remplitCbMois(cbm);
+	remplitCbAnnee(cba);
+	remplitCbReal(cbReal);
+};
 
 function ajoutReal(){
 	let newReal=prompt("Nouveau réalisateur");
@@ -46,7 +70,6 @@ function ajoutReal(){
 		i--;
 	maListe.options[i].selected=true;
 }
-
 function verifForm(){
 	let nbErr=0;
 	let champTitre = document.getElementById("titre_");
@@ -83,7 +106,7 @@ function verifForm(){
 }
 function oneChecked(){
 	let checkboxes = document.querySelectorAll("#checkGenres input[type=checkbox]:checked");
-   return checkboxes.length!==0
+	return checkboxes.length!==0
 }
 function colore(input){
 	input.style.backgroundColor='red';
@@ -91,6 +114,9 @@ function colore(input){
 function decolore(input) {
 	input.style.backgroundColor = 'white';
 }
-function decoloreCheck(input){
-	input.parentNode.style.borderStyle='none';
+
+function decoloreCheck(input) {
+	input.parentNode.style.borderStyle = 'none';
 }
+
+

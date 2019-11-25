@@ -27,6 +27,7 @@
 				<tr>
 					<th>Nom</th>
 					<th>Année Parution</th>
+					<th>Saisons</th>
 				</tr>
 			</thead>
 			<tbody id='bodyTableauSeries'>
@@ -34,7 +35,14 @@
 		</table>
 	</div>
 </div>
+<script src="./includes/scripts/common_fct.js"></script>
 <script src="./includes/scripts/list.js"></script>
+<script type="application/javascript">
+	document.body.onload = function(){
+	var tableSeries = document.querySelector("#tbSeries>tbody");
+	getListeSeries(tableSeries);
+	}
+	</script>
 </body>
 <!-- <footer><p>Site crée par Kénan Roux lors du premier cours de HTML/CSS du cursus UDEV'3</p></footer> -->
 </html>

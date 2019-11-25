@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ecd390ad-c471-4c00-b0e2-f8bb71de737a" name="Default Changelist" comment="" />
+    <list default="true" id="ecd390ad-c471-4c00-b0e2-f8bb71de737a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../HTML/site32/includes/scripts/common_fct.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testJQuery.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HTML/site32/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../HTML/site32/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HTML/site32/fiche.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../HTML/site32/fiche.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HTML/site32/includes/scripts/fiche.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../HTML/site32/includes/scripts/fiche.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HTML/site32/includes/scripts/list.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../HTML/site32/includes/scripts/list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HTML/site32/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../HTML/site32/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../JAVA EE/projetsMaven/cocktailee/cocktailee/src/main/java/cocktail/web/CommandeControleurServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../JAVA EE/projetsMaven/cocktailee/cocktailee/src/main/java/cocktail/web/CommandeControleurServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../JAVA EE/projetsMaven/cocktailee/cocktailee/src/main/java/cocktail/web/ServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../JAVA EE/projetsMaven/cocktailee/cocktailee/src/main/java/cocktail/web/RecapController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../JAVA EE/projetsMaven/cocktailee/cocktailee/src/main/webapp/WEB-INF/jsp/executionCommande.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../JAVA EE/projetsMaven/cocktailee/cocktailee/src/main/webapp/WEB-INF/jsp/executionCommande.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../JAVA EE/projetsMaven/cocktailee/cocktailee/src/main/webapp/WEB-INF/jsp/tableauDesCommandes.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../JAVA EE/projetsMaven/cocktailee/cocktailee/src/main/webapp/WEB-INF/jsp/tableauDesCommandes.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,9 +32,14 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
   <component name="ProjectId" id="1TeJ97zDBT6dgIlJ8UnAvIKalTr" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.karma.karma_node_package_dir" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -51,11 +70,23 @@
       <updated>1573814473046</updated>
       <workItem from="1573814474399" duration="30000" />
       <workItem from="1573814567546" duration="12130000" />
+      <workItem from="1574696399487" duration="1679000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand>
