@@ -29,7 +29,7 @@
 			</c:forEach>
 			</tbody>
 		</table>
-		<p style='color:red;'><c:out value="${errTabEmpty}"/></p>
+		<p class='erreur'><c:out value="${errTabEmpty}"/></p>
 		<div class="BoutonTab">
 			<a href="<c:url value="/execute"/>"><button>Commande suivante</button></a>
 			<a id='BoutonRetour' href="<c:url value="/accueil"/>"><button>Retour</button></a>

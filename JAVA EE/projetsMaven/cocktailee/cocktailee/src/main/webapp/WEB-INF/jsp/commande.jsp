@@ -20,12 +20,12 @@
 					</option>
 				</c:forEach>
 			</select>
-			<c:out value='${erreurs.erreurCocktail}' />
+			<p class='erreur'><c:out value='${erreurs.erreurCocktail}' /></p>
 		</div>
 		<div>
 			<label for="table">Numéro de table : </label>
 			<input id="table" name="table" type="text" value="<c:out value="${param['table']}" />">
-			<c:out value='${erreurs.erreurTable}' />
+			<p class='erreur'><c:out value='${erreurs.erreurTable}' /></p>
 		</div>
 		<div>
 			<button type="submit">Commander</button>

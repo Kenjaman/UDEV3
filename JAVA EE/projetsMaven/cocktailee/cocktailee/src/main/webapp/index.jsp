@@ -11,7 +11,10 @@
   <body>
   <div class='content'>
    	<a href="<c:url value="/commande"/>">Commander</a>  
-  	<a href="<c:url value="/recapCommande"/>">Les commandes à traiter</a>  
+  	<a href="<c:url value="/recapCommande"/>">Les commandes à traiter
+  	 <strong>
+  		(<c:out value="${listeCommandes.nombre}" />)
+  	</strong></a>  
   </div>
   </body>
 </html>

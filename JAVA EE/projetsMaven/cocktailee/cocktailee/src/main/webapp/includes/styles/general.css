@@ -3,7 +3,10 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover;
 }
-
+.erreur{
+	color:red;
+	display:block;
+}
 a {
 	display: block;
 	text-align: center;

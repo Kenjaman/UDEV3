@@ -19,7 +19,6 @@ public class ServiceCommande extends HttpServlet {
 	private TableauCommandes lesCommandes;
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		lesCommandes = getListCommandes();
 		Commande laCommande = lesCommandes.peek();
 		if(laCommande!=null) {
@@ -34,13 +33,12 @@ public class ServiceCommande extends HttpServlet {
 	}
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		if(lesCommandes.traiterCommande()!=null) {
 			getServletContext().setAttribute("listeCommandes", lesCommandes);
 			resp.sendRedirect("/cocktailee/recapCommande");
+		}else {
+			resp.sendError(404, "Comment t'es tu retrouvé la toi ..?");
 		}
-//		RequestDispatcher rd = getServletContext().getRequestDispatcher(VUE_LISTE);
-//		rd.forward(req, resp);
 	}
 	
 	private TableauCommandes getListCommandes() {

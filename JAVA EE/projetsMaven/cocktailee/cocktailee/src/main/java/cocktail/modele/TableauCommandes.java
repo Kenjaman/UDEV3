@@ -25,6 +25,9 @@ public class TableauCommandes extends ConcurrentLinkedQueue<Commande>{
 		return laString;
 	}
 
+	public int getNombre() {
+		return this.size();
+	}
 	public boolean ajoutCommande(Commande commande) {
 		return this.offer(commande);
 	}
