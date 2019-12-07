@@ -23,10 +23,11 @@ public class ServiceCommande extends HttpServlet {
 		lesCommandes = getListCommandes();
 		Commande laCommande = lesCommandes.peek();
 		if(laCommande!=null) {
-			getServletContext().setAttribute("laCommande", laCommande);
+			req.getServletContext().setAttribute("laCommande", laCommande);
 			RequestDispatcher rd = getServletContext().getRequestDispatcher(VUE_EXECUTION);
 			rd.forward(req, resp);
 		}else {
+			req.setAttribute("errTabEmpty", "Pas de commande en attente");
 			RequestDispatcher rd = getServletContext().getRequestDispatcher(VUE_LISTE);
 			rd.forward(req, resp);
 		}
@@ -34,9 +35,12 @@ public class ServiceCommande extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		lesCommandes.traiterCommande();
-		RequestDispatcher rd = getServletContext().getRequestDispatcher(VUE_LISTE);
-		rd.forward(req, resp);
+		if(lesCommandes.traiterCommande()!=null) {
+			getServletContext().setAttribute("listeCommandes", lesCommandes);
+			resp.sendRedirect("/cocktailee/recapCommande");
+		}
+//		RequestDispatcher rd = getServletContext().getRequestDispatcher(VUE_LISTE);
+//		rd.forward(req, resp);
 	}
 	
 	private TableauCommandes getListCommandes() {

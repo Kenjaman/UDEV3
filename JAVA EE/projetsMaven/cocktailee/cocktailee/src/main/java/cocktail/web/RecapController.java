@@ -30,24 +30,7 @@ public class RecapController extends HttpServlet {
 		RequestDispatcher rd = getServletContext().getRequestDispatcher(VUE_LISTE);
 		rd.forward(req, resp);
 	}
-	
-	//Appui sur le bouton "Cocktail Suivant"
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub.
-		System.out.println("doPost");
-		lesCommandes = getListCommandes();
-		Commande laCommande = lesCommandes.peek();
-		if(laCommande!=null) {
-			getServletContext().setAttribute("laCommande", laCommande);
-			RequestDispatcher rd = getServletContext().getRequestDispatcher(VUE_EXECUTION);
-			rd.forward(req, resp);
-		}
-//		else {
-//			RequestDispatcher rd = getServletContext().getRequestDispatcher(VUE_LISTE);
-//			rd.forward(req, resp);
-//		}
-	}
+
 
 	private TableauCommandes getListCommandes() {
 		return (TableauCommandes) getServletContext().getAttribute("listeCommandes");

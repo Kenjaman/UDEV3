@@ -5,20 +5,26 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<style>
-<%@include file="/WEB-INF/styles/tabCommande.css"%>
-</style>
 <title>La commande</title>
+<link href="<c:url value='/includes/styles/general.css' />"
+	rel="stylesheet"></link>
+<link rel="shortcut icon"
+	href="${pageContext.request.contextPath}/includes/images/favicon.ico" />
 </head>
 <body>
-	<div>
-		<p>Commande : ${laCommande.cocktail} venant de la table
-			${laCommande.numeroTable}</p>
+	<div class='content'>
+		<h3>Commande : ${laCommande.cocktail.nom}</h3>
+			<p><em>${laCommande.cocktail.composition}</em> venant de la table
+			<strong>${laCommande.numeroTable}</strong>
+			</p>
+
+		<div class="executer">
+			<form action="" method="POST">
+				<input type="submit" value="Commande terminée" />
+			</form>
+		</div>
+			<a href="<c:url value="/recapCommande"/>"><button>Retour
+					liste</button></a>
 	</div>
-	<form action="" method="POST"><input type="submit" value="Commande terminée"/></form>
-	
-	<a href="<c:url value="/recapCommande"/>"><button>Retour liste</button></a>
-
-
 </body>
 </html>

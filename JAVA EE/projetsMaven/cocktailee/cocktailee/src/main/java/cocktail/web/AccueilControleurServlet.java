@@ -8,10 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/")
+@WebServlet("/accueil")
 public class AccueilControleurServlet extends HttpServlet {
 
-	private static final String VUE_ACCUEIL = "/WEB-INF/jsp/accueil.jsp";
+	private static final String VUE_ACCUEIL = "/index.jsp";
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
