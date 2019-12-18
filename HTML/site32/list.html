@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
 	<title>List</title>
+	<meta charset="utf-8"/>
 	<link rel="stylesheet" type="text/css" href="includes/styles/topNav.css">
 	<link rel="stylesheet" type="text/css" href="includes/styles/liste.css">
 </head>
@@ -20,8 +21,8 @@
 	</nav>
 </section>
 <div id="content">
-	<div id="tableaux">
-		<table id=tableauSeries>
+	<div class="tableaux">
+		<table id="tableauSeries">
 		<caption>Les séries</caption>
 			<thead>
 				<tr>
@@ -34,14 +35,59 @@
 			</tbody>
 		</table>
 	</div>
+	<div class="tableaux">
+		<table id="tableauSaisons" >
+			<caption>Les saisons</caption>
+			<thead>
+			<tr>
+				<th>Numero</th>
+				<th>Année Diffusion</th>
+				<th>Episodes</th>
+			</tr>
+			</thead>
+			<tbody id='bodyTableauSaisons'>
+			</tbody>
+		</table>
+	</div>
+	<div class="tableaux">
+		<table id="tableauEpisodes">
+
+		</table>
+
+	</div>
 </div>
+<script
+		src="http://code.jquery.com/jquery-3.4.1.js"
+		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+		crossorigin="anonymous"></script>
+
+<script
+		src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"
+		integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+		crossorigin="anonymous"></script>
 <script src="./includes/scripts/common_fct.js"></script>
 <script src="./includes/scripts/list.js"></script>
 <script type="application/javascript">
-	document.body.onload = function(){
+
 	var tableSeries = document.querySelector("#tbSeries>tbody");
+	document.body.onload = function(){
 	getListeSeries(tableSeries);
-	}
+
+	};
+
+
+	$(document).on("click",".ligneTab",function(e){
+		$("#tableauSaisons").hide("blind",100);
+		$("#tableauSaisons>tbody>tr").each(function(){
+			$(this).empty();
+		});
+		var id = $(this)[0].getAttribute("tag");
+		getListeSaisons(document.querySelector("#tableauSaisons>tbody"),id);
+		$("#tableauSaisons").show("blind",1000);
+	});
+
+
+
 	</script>
 </body>
 <!-- <footer><p>Site crée par Kénan Roux lors du premier cours de HTML/CSS du cursus UDEV'3</p></footer> -->
