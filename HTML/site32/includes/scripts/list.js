@@ -95,3 +95,4 @@ function getNbEpisodes(id, cellSaison) {
 	xmlHttpSaisons.send();
 
 }
+
