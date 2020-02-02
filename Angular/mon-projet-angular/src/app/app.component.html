@@ -1,0 +1,206 @@
+<!--
+<h1>Hello {{prenom}} ! Como estas mister {{nom}}</h1>
+<h1>{{titre}}</h1>
+<label>Votre poids :
+  <input [(ngModel)]="poids">
+</label>
+
+<label> Votre taille :
+  <input [(ngModel)] ="taille">
+</label>
+
+<button (click)="onAffiche()">GO</button>
+
+<h2 *ngIf="imcJudgement">Votre IMC est de : {{IMC | number:"0.0-2"}}</h2>
+<p *ngIf="imcJudgement">Vous êtes : {{imcJudgement}}</p>
+<p *ngIf="poidIdeal">Votre poid idéal est de  {{poidIdeal}} Kgs</p>
+
+<input [(ngModel)]="fruit">
+<button (click)="onAjouter()">+</button>
+<table class="table table-condensed">
+  <tbody>
+  <tr *ngFor="let x of tab ; let i=index">
+    <td>{{x}}</td>
+    <td><button
+      (click)="onEnlever(i)"
+    >del</button></td>
+  </tr>
+  </tbody>
+</table>
+
+<button (click)="onTest()">Test</button>
+
+<label>Votre nom :
+  <input [(ngModel)]="nom">
+</label>
+
+<label> Votre prenom :
+  <input [(ngModel)] ="prenom">
+</label>
+
+
+<button (click)="onAjouter()">GO</button>
+<table class="table table-striped">
+  <tbody>
+  <tr *ngFor="let x of tab ; let i=index">
+    <td>{{x.nom}}</td>
+    <td>{{x.prenom}}</td>
+    <td><button
+      (click)="onEnlever(i)"
+    >del</button></td>
+  </tr>
+  </tbody>
+</table>
+-->
+<!--<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="my_class" [ngStyle]="{'background-color':getCouleur()}">
+&lt;!&ndash;           [ngClass]="{'bleu'  :couleur == 'b','rouge' :couleur == 'r'}">&ndash;&gt;
+           &lt;!&ndash;*ngIf="affiche == true" &ndash;&gt;
+      </div>
+      <button (click)="onSwitch()">Test</button>
+    </div>
+  </div>
+</div>-->
+<!--Memory HTML-->
+<!--<div class="container">
+
+  <div *ngFor="let x of tab3; let i=index" [ngClass]="{'green':getSelected(i)}" >
+    <img alt="{{x}}" src="./assets/images/{{x}}.jpg" (click)="onClick(x,i)" width="80" *ngIf="x !=-1">
+  </div>
+
+</div>
+<br><br>
+<div id="demo"><button id="btnTricher">Tricher</button></div>-->
+<!-- API OMDb -->
+<!--
+<br>
+<div class="container">
+	<div class="row">
+		<div class="col-5">
+			<div class="row">
+				<div class="col-8">
+					<input [(ngModel)]="film" placeholder="Film"class="form-control">
+				</div>
+				<div class="col-4">
+					<button (click)="onSearch()" class="btn btn-primary">
+						<i class="fa fa-plus"></i>
+					</button>
+
+				</div>
+			</div>
+			<table class="table table-striped">
+				<tbody>
+					<tr *ngFor="let f of tab;let i =index ">
+						<td>{{ f.Title}}</td>
+						<td><img src="{{ f.Poster }}" width="80"></td>
+						<td>
+							<button class="btn btn-success"
+							(click)="onAjouter(i)">
+							<i class="fa fa-plus"></i>
+						</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="col-2">
+	</div>
+	<div class="col-5">
+		<br>
+		<h3>Mes films :</h3>
+		<table class="table table-striped">
+			<tbody>
+				<tr *ngFor="let film of tabFavoris;let i = index">
+					<td>{{ film.Title}}</td>
+					<td><img src="{{ film.Poster }}" width="80"></td>
+					<td>
+						<button class="btn btn-danger"
+						(click)="onEnlever(i)">
+							<i class="fa fa-trash"></i>
+						</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+</div>
+-->
+<!-- Formulaire NgForm -->
+<!--
+<form (ngSubmit)="onAjouter(a)" #a="ngForm">
+  <input name="fruit" ngModel>
+  <br><br>
+  <input name="couleur" ngModel>
+  <br><br>
+  <select name="pays" ngModel>
+    <option value="fr">France</option>
+    <option value="be">Belgique</option>
+    <option value="al">Allemagne</option>
+  </select>
+  <button class="btn btn-success" type="submit">Ajouter</button>
+</form>
+
+<div *ngFor="let f of tab">
+  <p>{{f.fruit}}  :  {{f.couleur}}</p>
+</div>-->
+
+<!-- TP Appareils -->
+<!--
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+      <br>
+      <h3>Mes appareils</h3>
+      <ul class="list-group">
+        <app-appareil
+          *ngFor="let a of tabAppareil;let i = index"
+          [name]="a.name" [status]="a.status" [i]="i">
+        </app-appareil>
+      </ul>
+      <br>
+      <button class="btn btn-success" (click)="onAllumer()">
+        ON
+      </button>
+      &nbsp;
+      <button class="btn btn-danger" (click)="onEteindre()">
+        OFF
+      </button>
+    </div>
+    <div class="col-lg-4">
+      <div class="input-group">
+      <p>Appareil : <input [(ngModel)]="nomAppareil"/></p><br>
+      <p>Etat:
+        <select [(ngModel)]="etatAppareil">
+        <option value="allumé">Allumé</option>
+      <option value="éteint">Eteint</option>
+      </select></p>
+      <br>
+      <button class="btn btn-primary" (click)="onAjoute()">Ajouter</button>
+      </div>
+    </div>
+  </div>
+</div>
+-->
+
+<!--TP connexion interaction API-PHP -->
+<!--
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <button (click)="onLecture()">Lecture</button>
+      <h3 *ngFor="let f of tabPersonne">
+        {{ f.nom }} {{ f.prenom }}
+      </h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <button (click)="onEcriture()">Ecriture</button>
+    </div>
+  </div>
+</div>
+-->
+<app-tp-tableau-person></app-tp-tableau-person>
