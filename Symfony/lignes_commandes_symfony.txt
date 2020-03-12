@@ -1,0 +1,33 @@
+--recette
+symfony.sh
+
+--installation d'un projet symfony flex 3.4
+composer create-project symfony/website-skeleton my_project "3.4.*"
+
+--Création Controlleur
+php bin/console make:controller
+
+--Suppression du cache (par défaut env = dev)
+php bin/console cache:clear --env=prod
+
+--Affichage des routes
+php bin/console debug:router
+
+--Détail d'une route
+php bin/console debug:router nom_route
+
+--Doctrine 
+--création de la base de données
+php bin/console doctrine:database:create
+
+--création des entités Doctrine
+php bin/console make:entity
+
+--verifie syntaxe fichier et que la base de données soit en corrélation 
+php bin/console doctrine:schema:validate
+
+--Met à jour la BDD
+php bin/console doctrine:schema:update --force
+
+--Formulaire
+php bin/console make:form
