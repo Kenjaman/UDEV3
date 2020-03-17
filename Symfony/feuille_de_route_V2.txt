@@ -1,0 +1,38 @@
+// je créer mon projet
+composer create-project symfony/skeleton projet-sample
+
+cd projet-sample
+composer req requirements-checker
+composer req apache-pack
+composer req annotations
+composer req make
+composer req twig
+composer req asset
+composer req doctrine
+composer req debug
+composer req form
+
+composer req validator
+composer req security-csrf
+
+
+php bin/console make:controller
+php bin/console make:entity
+// pensez au .env login , psw et data base
+php bin/console doctrine:database:create
+php bin/console doctrine:schema:update --force
+php bin/console make:form
+
+php bin/console debug:router
+php bin/console cache:clear
+
+mode god :) ->  php bin/console make:crud
+
+--verifie syntaxe fichier et que la base de données soit en corrélation 
+php bin/console doctrine:schema:validate
+
+-- a utiliser en dernier recours 
+doctrine:database:drop --force
+
+
+
