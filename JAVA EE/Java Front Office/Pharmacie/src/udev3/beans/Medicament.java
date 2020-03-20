@@ -29,6 +29,9 @@ public class Medicament extends Beans {
 	    return prix;
 	  }
 	 
+	  public void setPrix(double prix) {
+		  this.prix=prix;
+	  }
 	  public String getNom() {
 	    return nom;
 	  }

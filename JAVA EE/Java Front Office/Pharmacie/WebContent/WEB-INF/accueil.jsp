@@ -7,15 +7,25 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:forEach var="client" items = "${clients}" >
-${client.nom }
-
-</c:forEach>
-
-<c:forEach var="medoc" items = "${medicaments}" >
-
-${medoc.nom }
-${medoc.stock }
-</c:forEach>
+<table>
+	<c:forEach var="client" items = "${clients}" >
+	<tr>
+		<td>${client.nom }</td>
+		<td>${client.credit}</td>		
+	</tr>
+	</c:forEach>
+</table>
+<table>
+	
+	<c:forEach var="medoc" items = "${medicaments}" >
+	<tr>
+		<td>${medoc.nom }</td>
+		<td>${medoc.prix}</td>		
+		<td>${medoc.stock}</td>		
+	</tr>
+	</c:forEach>
+</table>
+<a href="<c:url value="/appro"/>">Approvisionement</a>
+<a href="<c:url value="/achat"/>">Achat</a>
 </body>
 </html>
