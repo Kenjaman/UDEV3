@@ -18,7 +18,7 @@ public class Population {
 	private Long id;
 	private Integer nombreIndividus;
 	
-	@OneToOne
+	@ManyToOne
 	private Animal animal;
 	
 
