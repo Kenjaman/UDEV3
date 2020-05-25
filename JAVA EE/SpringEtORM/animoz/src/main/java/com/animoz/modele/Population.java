@@ -7,11 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.Min;
 
-import org.hibernate.validator.constraints.NotBlank;
-import org.springframework.lang.NonNull;
-
 @Entity
-public class Population {
+public class Population implements IPopulation {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

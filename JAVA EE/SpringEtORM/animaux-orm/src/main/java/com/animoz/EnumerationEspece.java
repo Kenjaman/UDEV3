@@ -1,14 +1,9 @@
 package com.animoz;
 
-import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import com.animoz.modele.Animal;
-import com.animoz.modele.Espece;
-import com.animoz.modele.Population;
 
 public class EnumerationEspece {			
 		

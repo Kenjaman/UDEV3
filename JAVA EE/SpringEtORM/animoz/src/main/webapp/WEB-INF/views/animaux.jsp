@@ -10,7 +10,7 @@
 	<nav>
 		<a href="<c:url value='/'/>">Accueil</a>
 		<a href="<c:url value='/ajoutAnimal'/>">Ajouter un animal</a>
-		<a href="<c:url value='/animaux/liste.pdf'/>">Obtenir la liste</a>
+		<a href="<c:url value='/animaux/liste.pdf'/>" target="_bank">Obtenir la liste</a>
 		
 	</nav>
 	<ul>

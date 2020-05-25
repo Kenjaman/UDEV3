@@ -74,7 +74,7 @@ public class Animal {
 	
 	public int getPopulationTotale() {
 		int populationTotale = 0;
-		for (Population population : populations) {
+		for (IPopulation population : populations) {
 			populationTotale += population.getNombreIndividus();
 		}
 		return populationTotale;

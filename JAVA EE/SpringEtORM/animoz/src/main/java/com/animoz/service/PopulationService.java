@@ -11,6 +11,7 @@ import com.animoz.dao.AnimalDao;
 import com.animoz.dao.EnclosDao;
 import com.animoz.dao.PopulationDao;
 import com.animoz.modele.Enclos;
+import com.animoz.modele.IPopulation;
 import com.animoz.modele.Population;
 import com.animoz.modele.Regime;
 
@@ -24,13 +25,13 @@ public class PopulationService {
 	private EnclosDao enclosDao;
 	
 	@Transactional
-	public void ajouter(Population population) throws IllegalEnclosException {
-		Population populationCreer = new Population();
+	public void ajouter(IPopulation population) throws IllegalEnclosException {
+		IPopulation populationCreer = new Population();
 		populationCreer.setAnimal(animalDao.getAnimal(population.getAnimal().getId()));
 		populationCreer.setNombreIndividus(population.getNombreIndividus());
 		Enclos enclos = enclosDao.getEnclos(population.getEnclos().getId()); 
 		
-		for (Population p : enclos.getPopulations()) {
+		for (IPopulation p : enclos.getPopulations()) {
 			if(population.getEnclos().getId()== p.getEnclos().getId()) {
 				System.out.println("on est dans le if numero enclos");
 				if(populationCreer.getAnimal().getRegime()==Regime.carnivore) {

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="second_modele" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e79a8629-5c51-4d15-9ff1-3eaa925a3c22">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="animoz adapter"/>
+	<queryString language="SQL">
+		<![CDATA[select  a.nom ,  p.`nombreIndividus` , e.numero
+From population p 
+join animal a on   p.animal_id = a.id 
+join enclos e on p.enclos_id = e.id
+group by p.id]]>
+	</queryString>
+	<field name="nom" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nom"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="animal"/>
+	</field>
+	<field name="nombreIndividus" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="nombreIndividus"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="population"/>
+	</field>
+	<field name="numero" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="numero"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="enclos"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="79" uuid="e6e82562-f2ee-4370-9943-9cf8d9bbb17e"/>
+				<textElement>
+					<font size="29"/>
+				</textElement>
+				<text><![CDATA[Rapport des populations]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement x="0" y="0" width="185" height="30" uuid="cb7ced20-56bb-42df-9c35-e5663a77f7c3"/>
+				<text><![CDATA[Animal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="185" y="0" width="185" height="30" uuid="ffa569fd-aed0-4074-b7b1-8916b7b101e6"/>
+				<text><![CDATA[Population]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="370" y="0" width="185" height="30" uuid="0a14f5fe-451e-49be-85f1-9bdf972d3648">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a404563d-3649-47b9-881c-3429a15b65ed"/>
+				</reportElement>
+				<text><![CDATA[Enclos]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="29" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+			<textField>
+				<reportElement x="0" y="0" width="185" height="29" uuid="346459ce-2f65-4272-ba6d-f1b2764b7ac2">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5d9ab8ca-0305-45d3-b49e-ae03d78d36a9"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="185" y="0" width="185" height="29" uuid="c31d625c-0522-44ee-b23a-c240b96a0c13">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e7019104-cb48-42fa-8ee4-701a0636d4e0"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nombreIndividus}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="370" y="0" width="185" height="29" uuid="5899f9b6-833e-4ff2-bd86-cd22082a4a64">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a404563d-3649-47b9-881c-3429a15b65ed"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{numero}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

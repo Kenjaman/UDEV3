@@ -41,7 +41,6 @@ public class EspeceControleur {
 			especeService.supprimer(especeDto.getNom());
 			return "redirect:/espece";
 		} catch (AnimalExisteEncoreException e) {
-			// TODO Auto-generated catch block
 			model.addAttribute("messageErreur",e.getMessage());
 			return getEspeces(model, especeDto);
 		}

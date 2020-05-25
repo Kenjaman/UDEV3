@@ -3,6 +3,7 @@ package com.animoz.controleur;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,6 +24,7 @@ import com.animoz.modele.Regime;
 import com.animoz.service.AnimalService;
 import com.animoz.service.EspeceService;
 
+import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
@@ -33,14 +35,14 @@ import net.sf.jasperreports.export.SimpleOutputStreamExporterOutput;
 
 @Controller
 public class AnimalControleur {
-	
+
 	@Autowired
 	private AnimalService animalService;
 	@Autowired
 	private EspeceService especeService;
 	@Autowired
 	private DataSource dataSource;
-	
+
 	@GetMapping("/animal")
 	public String getListeAnimaux(Model model) {
 		model.addAttribute("animaux", animalService.getAnimaux());
@@ -52,15 +54,15 @@ public class AnimalControleur {
 		model.addAttribute("animal", animalService.getAnimal(animalId));
 		return "animal";
 	}
-	
+
 	@GetMapping("/ajoutAnimal")
 	public String ajouterAnimal(Model model, @ModelAttribute AnimalDto animalDto) {
 		model.addAttribute("especes", especeService.getEspeces());
 		model.addAttribute("regimes", Regime.values());
-		
+
 		return "ajoutAnimal";
 	}
-	
+
 	@PostMapping("/ajoutAnimal")
 	public String ajouterAnimal(Model model, @Valid @ModelAttribute AnimalDto animalDto, BindingResult bindingResult) {
 		if(bindingResult.hasErrors()) {
@@ -71,7 +73,7 @@ public class AnimalControleur {
 			return "redirect:/animal";
 		}
 	}
-	
+
 	@GetMapping("/animal/{animalId}/modif")
 	public String modifAnimal(Model model,@PathVariable long animalId) {
 		model.addAttribute("animal", animalService.getAnimal(animalId));
@@ -79,7 +81,7 @@ public class AnimalControleur {
 		model.addAttribute("regimes", Regime.values());
 		return "modifAnimal";
 	}
-	
+
 	@PostMapping("/animal/{animalId}/modif")
 	public String modifAnimal(Model model,@PathVariable long animalId, @Valid @ModelAttribute Animal animal,BindingResult bindingResult) {
 		if(bindingResult.hasErrors()) {
@@ -93,20 +95,23 @@ public class AnimalControleur {
 		}
 	}
 
-	  @GetMapping(path="animaux/liste.pdf", produces = "application/pdf")
-	  public void produireRapport(OutputStream out) throws Exception {
-	    InputStream modeleInputStream = this.getClass().getResourceAsStream("/listAnimaux.jrxml");
-	    JasperReport rapport = JasperCompileManager.compileReport(modeleInputStream);
-	    try(Connection connection = dataSource.getConnection()) {
-	      Map<String, Object> parameters = new HashMap<>();
-	      parameters.put("AUTEUR", "Kénan Roux");
-	      JasperPrint print = JasperFillManager.fillReport(rapport, parameters, connection);
+	@GetMapping(path="animaux/liste.pdf", produces = "application/pdf")
+	public void produireRapport(OutputStream out) {
+		try(Connection connection = dataSource.getConnection()) {
+			InputStream modeleInputStream = this.getClass().getResourceAsStream("/listAnimaux.jrxml");
+			JasperReport rapport = JasperCompileManager.compileReport(modeleInputStream);
+			Map<String, Object> parameters = new HashMap<>();
+			parameters.put("AUTEUR", "Kénan Roux");
+			JasperPrint print = JasperFillManager.fillReport(rapport, parameters, connection);
 
-	      JRPdfExporter pdfExporter = new JRPdfExporter();
-	      pdfExporter.setExporterInput(new SimpleExporterInput(print));
-	      pdfExporter.setExporterOutput(new SimpleOutputStreamExporterOutput(out));
-	      pdfExporter.exportReport();
-	    }
-	    
+			JRPdfExporter pdfExporter = new JRPdfExporter();
+			pdfExporter.setExporterInput(new SimpleExporterInput(print));
+			pdfExporter.setExporterOutput(new SimpleOutputStreamExporterOutput(out));
+			pdfExporter.exportReport();
+		} catch (SQLException | JRException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 	}
 }

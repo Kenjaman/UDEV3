@@ -7,7 +7,6 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import com.animoz.modele.Animal;
-import com.animoz.modele.Espece;
 import com.animoz.modele.Regime;
 
 public class ListAnimauxApplication {			

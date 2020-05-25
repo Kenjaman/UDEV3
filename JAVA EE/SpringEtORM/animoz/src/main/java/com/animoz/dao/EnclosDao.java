@@ -7,9 +7,7 @@ import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Repository;
 
-import com.animoz.modele.Animal;
 import com.animoz.modele.Enclos;
-import com.animoz.modele.Population;
 
 @Repository
 public class EnclosDao {

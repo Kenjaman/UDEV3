@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.animoz.dao.EnclosDao;
 import com.animoz.modele.Enclos;
-import com.animoz.modele.Population;
+import com.animoz.modele.IPopulation;
 
 @Service
 public class EnclosService {
@@ -21,7 +21,7 @@ public class EnclosService {
 	
 	public int getNbIndEnclos(Enclos enclos) {
 		int nbInd = 0;
-		for(Population pop : enclos.getPopulations()) {
+		for(IPopulation pop : enclos.getPopulations()) {
 			nbInd+=pop.getNombreIndividus();
 		}
 		return nbInd;
