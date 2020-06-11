@@ -7,6 +7,7 @@ import com.animoz.modele.Regime;
 
 public class AnimalDto {
 	
+	private Long id;
 	@NotBlank(message = "Le nom ne doit pas etre vide")
 	private String nom;
 	
@@ -15,6 +16,14 @@ public class AnimalDto {
 	private Espece espece;
 	private Regime regime;
 	
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public String getNom() {
 		return nom;
