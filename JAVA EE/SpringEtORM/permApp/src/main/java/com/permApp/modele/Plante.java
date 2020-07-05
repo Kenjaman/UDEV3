@@ -20,9 +20,9 @@ public class Plante {
 	private String nom;
 	private Date date_creation;
 	@OneToMany
-	private List<Plante> mauvaisesAssoc;
+	private List<Association> mauvaisesAssoc;
 	@OneToMany
-	private List<Plante> bonnesAssoc;
+	private List<Association> bonnesAssoc;
 
 	public List<Plante> getMauvaisesAssoc() {
 		return mauvaisesAssoc;
