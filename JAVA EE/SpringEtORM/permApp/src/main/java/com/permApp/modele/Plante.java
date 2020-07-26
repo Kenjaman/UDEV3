@@ -4,12 +4,14 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
-
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class Plante {
@@ -18,27 +20,29 @@ public class Plante {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nom;
+	@Temporal(value=TemporalType.TIMESTAMP)
 	private Date date_creation;
-	@OneToMany
-	private List<Association> mauvaisesAssoc;
-	@OneToMany
-	private List<Association> bonnesAssoc;
+	@ManyToMany
+	private List<Association> compagnons;
+//	@OneToMany
+//	private List<Association> bonnesAssoc;
+	
 
-	public List<Plante> getMauvaisesAssoc() {
-		return mauvaisesAssoc;
-	}
-
-	public void setMauvaisesAssoc(List<Plante> mauvaisesAssoc) {
-		this.mauvaisesAssoc = mauvaisesAssoc;
-	}
-
-	public List<Plante> getBonnesAssoc() {
-		return bonnesAssoc;
-	}
-
-	public void setBonnesAssoc(List<Plante> bonnesAssoc) {
-		this.bonnesAssoc = bonnesAssoc;
-	}
+//	public List<Association> getMauvaisesAssoc() {
+//		return mauvaisesAssoc;
+//	}
+//
+//	public void setMauvaisesAssoc(List<Association> mauvaisesAssoc) {
+//		this.mauvaisesAssoc = mauvaisesAssoc;
+//	}
+//
+//	public List<Association> getBonnesAssoc() {
+//		return bonnesAssoc;
+//	}
+//
+//	public void setBonnesAssoc(List<Association> bonnesAssoc) {
+//		this.bonnesAssoc = bonnesAssoc;
+//	}
 
 	public Long getId() {
 		return id;
@@ -62,6 +66,14 @@ public class Plante {
 	
 	public void setDate_creation(Date date_creation) {
 		this.date_creation = date_creation;
+	}
+
+	public List<Association> getCompagnons() {
+		return compagnons;
+	}
+
+	public void setCompagnons(List<Association> compagnons) {
+		this.compagnons = compagnons;
 	}
 
 

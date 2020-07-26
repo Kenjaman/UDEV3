@@ -2,6 +2,9 @@ package com.permApp.modele;
 
 import java.io.Serializable;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class AssociationId implements Serializable{
 	protected Long id_plante1;
 	protected Long id_plante2;

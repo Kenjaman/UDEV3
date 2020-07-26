@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Demo Occupation</string>
+    <string name="same_categorie">Autres activités dans la catégorie</string>
+    <string name="placeholder_text">Ipsum Lorem</string>
+</resources>

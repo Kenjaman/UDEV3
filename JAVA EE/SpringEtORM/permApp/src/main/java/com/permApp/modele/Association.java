@@ -1,18 +1,34 @@
 package com.permApp.modele;
 
+import java.util.List;
+
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
-@Entity @IdClass(AssociationId.class)
+@Entity
 public class Association {
 	
-	@Id
-	private Long id_plante1;
-	@Id
-	private Long id_plante2;
+//	//Creer un id technique unique
+//	@Id
+//	private Long id_assoc;
+
+	@EmbeddedId
+	private AssociationId id_assoc;
+	@OneToMany
+	private List<Plante> id_plante1;
+	@OneToMany
+	private List<Plante> id_plante2;
 	
-	private Qualite relation;
+	
+
+	@Enumerated(EnumType.STRING)
+	private Relation relation;
 	
 	
 	public Long getId_plante1() {
@@ -27,10 +43,10 @@ public class Association {
 	public void setId_plante2(Long id_plante2) {
 		this.id_plante2 = id_plante2;
 	}
-	public Qualite getRelation() {
+	public Relation getRelation() {
 		return relation;
 	}
-	public void setRelation(Qualite relation) {
+	public void setRelation(Relation relation) {
 		this.relation = relation;
 	}
 
