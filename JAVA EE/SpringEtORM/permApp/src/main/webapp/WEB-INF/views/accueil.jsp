@@ -11,7 +11,6 @@
 	<nav>
 		<a href="<c:url value='/plantes'/>">Liste des plantes</a>
 		<a href="<c:url value='/ajoutPlante'/>">Ajouter une plante</a>
-		<p> Test </p>
 	</nav>
 </body>
 </html>

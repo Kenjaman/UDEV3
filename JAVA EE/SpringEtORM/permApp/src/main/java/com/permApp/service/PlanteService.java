@@ -18,7 +18,7 @@ public class PlanteService {
 		return planteDao.getPlantes();
 	}
 
-	public Plante getPlante(long planteId) {
+	public Plante getPlante(int planteId) {
 		return planteDao.getPlante(planteId);
 	}
 

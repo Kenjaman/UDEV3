@@ -27,9 +27,9 @@
 			<c:forEach items="${plantes}" var="plante">
 				<p>
 					<c:out value="${plante.nom}" />
-					<form:hidden path="compagnons.id_plante1" value="${plante.id}"/>
-					<form:label path="compagnons.relation">Relations: 
-					<form:radiobuttons path="compagnons.relation" items="${relations}" />
+					<form:hidden path="associations1.id_plante1" value="${plante.id}"/>
+					<form:label path="associations1.relation">Relations: 
+					<form:radiobuttons path="associations1.relation" items="${relations}" />
 					</form:label>
 					<%-- 					<form:errors path="compagnons"></form:errors>
  --%>

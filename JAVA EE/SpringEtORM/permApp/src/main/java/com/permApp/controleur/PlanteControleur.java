@@ -23,9 +23,9 @@ public class PlanteControleur {
 	@GetMapping("/plantes")
 	public String getListePlantes(Model model) {
 		model.addAttribute("plantes", planteService.getPlantes());
-		for (Association assoc : associationService.getAssociations()) {
-			System.out.println(assoc.getId_plante1()+ " + "+assoc.getId_plante2()+" = "+assoc.getRelation());
-		}
+//		for (Association assoc : associationService.getAssociations()) {
+//			System.out.println(assoc.getPlante1()+ " + "+assoc.getPlante2()+" = "+assoc.getRelation());
+//		}
 		return "plantes";
 	}
 	
