@@ -77,6 +77,7 @@
       <workItem from="1573814567546" duration="12130000" />
       <workItem from="1574696399487" duration="1679000" />
       <workItem from="1576241003848" duration="490000" />
+      <workItem from="1599490145334" duration="761000" />
     </task>
     <servers />
   </component>
@@ -95,6 +96,12 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="616" y="240" key="run.anything.popup" timestamp="1599490172054">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599490172054" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand>

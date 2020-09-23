@@ -1,0 +1,21 @@
+Mesdames et messieurs du jury bonjour, je suis Kénan Roux et je suis ici pour vous présenté ma soutenance au diplôme de concepteur développeur
+d'application numérique pour lequel j'ai effectué une alternance d'un an entre l'école EPSI et l'entreprise CGI.
+
+Je vais tout d'abord vous dire quelques mots sur mon parcours avant de continuer sur une présentation rapide de CGI et enfin je vous présenterais 
+le projet sur lequel j'ai put travailler au sein de cette grande entreprise.
+
+Après l'obtention d'un DUT Informatique, j'ai travailler pendant 6 ans dans le secteur du tourisme et de la restauration 
+avant de décider de revenir dans mon domaine de prédilection, le développement informatique.
+
+C'est pour cette raison que j'ai integrer l'ecole UDEV proposé par l'entreprise CGI, la 5ème société indépendante mondiale de conseil 
+et services du numérique réunissant 77 500 professionnels dans 40 pays,fondée en 1976 par Serge Godin et intervenant dans des secteurs
+ aussi variés que la Distribution, l’Énergie, la Finance, l’Industrie, le Secteur public ou encore dans le Transport.
+
+Au cours de mon alternance j'ai integrer l'agence CGI située au Haillan. 
+J'évolue la bas dans la BU GO au poste d' Analyste developpeur et expert logiciel au sein de l'équipe du projet TMA Meta4 PeopleNET que je vais 
+tout de suite vous présenté.
+
+Il s'agit donc d'un projet de tierce maintenance applicative sur un progiciel SIRH nommé PeopleNet de l'éditeur Meta4 pour le compte de 3 clients
+pour lesquels nous assurons le maintient en conditions opérationnelles,la résolution d'anomalies remontées par les utilisateurs,
+ et la montée de version du logiciel lorsque l'éditeur délivre une mise a jour.
+

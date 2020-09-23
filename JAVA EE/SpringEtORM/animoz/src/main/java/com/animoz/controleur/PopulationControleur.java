@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
 import javax.validation.Valid;
 
@@ -47,7 +46,6 @@ public class PopulationControleur {
 	private DataSource dataSource;
 	private JasperReport rapport;
 
-	@PostConstruct
 	public void compilerRapport() throws JRException {
 		InputStream modeleInputStream = this.getClass().getResourceAsStream("/listPopulation.jrxml");
 		rapport = JasperCompileManager.compileReport(modeleInputStream);
@@ -63,6 +61,7 @@ public class PopulationControleur {
 		try(Connection connection = dataSource.getConnection()) {
 			Map<String, Object> parameters = new HashMap<>();
 			parameters.put("AUTEUR", "Kénan Roux");
+			compilerRapport();
 			JasperPrint print = JasperFillManager.fillReport(rapport, parameters, connection);
 			JRXlsxExporter xlsxExporter = new JRXlsxExporter();
 			xlsxExporter.setExporterInput(new SimpleExporterInput(print));
