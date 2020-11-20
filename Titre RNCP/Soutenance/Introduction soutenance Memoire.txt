@@ -13,9 +13,9 @@ et services du numérique réunissant 77 500 professionnels dans 40 pays,fondée en
 
 Au cours de mon alternance j'ai integrer l'agence CGI située au Haillan. 
 J'évolue la bas dans la BU GO au poste d' Analyste developpeur et expert logiciel au sein de l'équipe du projet TMA Meta4 PeopleNET que je vais 
-tout de suite vous présenter.
+tout de suite vous présenté.
 
 Il s'agit donc d'un projet de tierce maintenance applicative sur un progiciel SIRH nommé PeopleNet de l'éditeur Meta4 pour le compte de 3 clients
 pour lesquels nous assurons le maintient en conditions opérationnelles,la résolution d'anomalies remontées par les utilisateurs,
- et la montée de version du logiciel.
+ et la montée de version du logiciel lorsque l'éditeur délivre une mise a jour.
 
