@@ -1,10 +1,28 @@
-# MonProjetAngular
+# Mon Projet Angular - Collection d'Exercices
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
+Ce projet a été généré avec [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23 et sert de collection pour divers exercices et travaux pratiques réalisés durant la formation.
+
+## Contenu du projet
+
+Ce n'est pas une application unique, mais plutôt un bac à sable contenant plusieurs mini-projets et démonstrations, notamment :
+
+*   **Gestionnaire d'appareils :** Une interface simple pour allumer, éteindre et ajouter des appareils. (Voir `app/appareil/`)
+*   **Tableau de personnes :** Un composant pour afficher une liste de personnes. (Voir `app/tp-tableau-person/`)
+*   **Recherche de films :** Une fonctionnalité (actuellement commentée dans `app.component.html`) pour rechercher des films via l'API OMDb et les ajouter à une liste de favoris.
+*   **Jeu de mémoire :** Un petit jeu de cartes memory.
+*   **Divers :** D'autres exercices sur les formulaires, l'IMC, etc.
+
+Le composant actif au démarrage est `<app-tp-tableau-person>`. Pour explorer les autres fonctionnalités, il est nécessaire de modifier `src/app/app.component.html`.
+
+---
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+First, install the dependencies:
+```sh
+npm install
+```
+Then, run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
